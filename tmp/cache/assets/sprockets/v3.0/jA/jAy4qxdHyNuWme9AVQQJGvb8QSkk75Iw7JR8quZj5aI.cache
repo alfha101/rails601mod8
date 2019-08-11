@@ -1,0 +1,10 @@
+{:uriI"«file://app/assets/javascripts/spa-demo/subjects/current_images/current_image_viewer.html?type=text/html&id=66f9a0b8fe4487cedfbd3a246ec3ca2537ba5cc1216fa56ab360e7090685b40b:ET:load_pathI"app/assets/javascripts;T:filenameI"Vapp/assets/javascripts/spa-demo/subjects/current_images/current_image_viewer.html;T:	nameI":spa-demo/subjects/current_images/current_image_viewer;T:logical_pathI"?spa-demo/subjects/current_images/current_image_viewer.html;T:content_typeI"text/html;T:sourceI""<sd-image-viewer images="$ctrl.images"
+                 current-image-index="$ctrl.currentImageIndex"
+                 index-changed="$ctrl.viewerIndexChanged(index)"
+                 name="{{$ctrl.name}}"
+                 min-width="{{$ctrl.minWidth}}">
+                 </sd-image-viewer>;T:metadata{	:dependencieso:Set:
+@hash}
+I"environment-version;TTI"environment-paths;TTI"rails-env;TTI"2processors:type=text/html&file_type=text/html;TTI"dfile-digest://app/assets/javascripts/spa-demo/subjects/current_images/current_image_viewer.html;TTF:charsetI"
+utf-8;F:digest"%n+€Ş^4(U	™ŒÑ%sÛ7îªµÍve°,Ñô¿:lengthi":dependencies_digest"%7~q\c&RÔùP÷q‹¡TÜ|3`¿dÁîÑøƒ¿=:idI"E66f9a0b8fe4487cedfbd3a246ec3ca2537ba5cc1216fa56ab360e7090685b40b;F:
+mtimel+Ïw=]

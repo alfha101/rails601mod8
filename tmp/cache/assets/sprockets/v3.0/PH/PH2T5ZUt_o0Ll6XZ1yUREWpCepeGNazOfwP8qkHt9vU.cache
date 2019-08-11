@@ -1,0 +1,15 @@
+{:uriI"file://app/assets/javascripts/spa-demo/layout/tabs/tabs.html?type=text/html&id=3ed5e35edecd47580b602e5347525663921b90c0739a087eb5d850e963e70665:ET:load_pathI"app/assets/javascripts;T:filenameI":app/assets/javascripts/spa-demo/layout/tabs/tabs.html;T:	nameI"spa-demo/layout/tabs/tabs;T:logical_pathI"#spa-demo/layout/tabs/tabs.html;T:content_typeI"text/html;T:sourceI"7<div class="tabs-pane">
+  <ul class="tab-label nav nav-pills" role="tablist">
+    <li ng-repeat="tab in $ctrl.tabs"
+        ng-class="{active: tab.selected}">
+      <a role="tab"
+         ng-click="$ctrl.selectTab(tab)">{{tab.label}}</a>
+    </li>
+  </ul>
+
+  <div class="tab-content" ng-transclude></div>
+</div>;T:metadata{	:dependencieso:Set:
+@hash}
+I"environment-version;TTI"environment-paths;TTI"rails-env;TTI"2processors:type=text/html&file_type=text/html;TTI"Hfile-digest://app/assets/javascripts/spa-demo/layout/tabs/tabs.html;TTF:charsetI"
+utf-8;F:digest"%®"Ä•Ûû‘yf½Ä¤“œ4ÈŒ9Ö¦³}ËåÍf'íÊ:lengthi7:dependencies_digest"%ãˆnŸ€²*Ì<`º‘JĞhGŒúÆF¾m\~/0ÅjÑk:idI"E3ed5e35edecd47580b602e5347525663921b90c0739a087eb5d850e963e70665;F:
+mtimel+Ïw=]

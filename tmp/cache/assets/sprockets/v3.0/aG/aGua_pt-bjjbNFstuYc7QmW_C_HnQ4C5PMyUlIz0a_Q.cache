@@ -1,0 +1,8 @@
+{:uriI"file://app/assets/javascripts/spa-demo/pages/signup_page.html?type=text/html&id=68ddb660160dc9a483c0699ebcfaaf0797d48ddf8e982cc8e3576e0bc7b6028f:ET:load_pathI"app/assets/javascripts;T:filenameI";app/assets/javascripts/spa-demo/pages/signup_page.html;T:	nameI"spa-demo/pages/signup_page;T:logical_pathI"$spa-demo/pages/signup_page.html;T:content_typeI"text/html;T:sourceI"\<div id="signup-page">
+  <h1>Account Registration</h1>
+  <sd-signup></sd-signup>
+</div>;T:metadata{	:dependencieso:Set:
+@hash}
+I"environment-version;TTI"environment-paths;TTI"rails-env;TTI"2processors:type=text/html&file_type=text/html;TTI"Ifile-digest://app/assets/javascripts/spa-demo/pages/signup_page.html;TTF:charsetI"
+utf-8;F:digest"%±cÔ'c¯Oi¸Î³DÛ·ä_¿–X]ĞprÁ:lengthi\:dependencies_digest"%×ú”WáOS?‡äØ¹2­¾§j©¶´‰%m«d„:idI"E68ddb660160dc9a483c0699ebcfaaf0797d48ddf8e982cc8e3576e0bc7b6028f;F:
+mtimel+Ïw=]

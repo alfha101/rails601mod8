@@ -1,0 +1,11 @@
+{:uriI"file://app/assets/javascripts/spa-demo/pages/images_page.html?type=text/html&id=463d7628cad8886de8b5604166696d429ca818378ae4bd659e9211a827d23099:ET:load_pathI"app/assets/javascripts;T:filenameI";app/assets/javascripts/spa-demo/pages/images_page.html;T:	nameI"spa-demo/pages/images_page;T:logical_pathI"$spa-demo/pages/images_page.html;T:content_typeI"text/html;T:sourceI"¹<div class="images-area" sd-images-authz>
+  <h3>Images</h3>
+  <sd-image-editor authz="vm.authz"></sd-image-editor>
+  <sd-image-selector authz="vm.authz"></sd-image-selector>    
+</div>
+;T:metadata{	:dependencieso:Set:
+@hash}
+I"environment-version;TTI"environment-paths;TTI"rails-env;TTI"2processors:type=text/html&file_type=text/html;TTI"Ifile-digest://app/assets/javascripts/spa-demo/pages/images_page.html;TTF:charsetI"
+utf-8;F:digest"%Ä\P:ĞÚ5vŞê¸WâEAWÁ£)ÍæõDJDñ¯:lengthi¹:dependencies_digest"%œ}×è(©mæû¤±¯cŠBÏÓ
+Œ·‹a¶:idI"E463d7628cad8886de8b5604166696d429ca818378ae4bd659e9211a827d23099;F:
+mtimel+Ïw=]

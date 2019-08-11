@@ -1,0 +1,36 @@
+{:uriI"Ÿfile://app/assets/javascripts/spa-demo/layout/image_loader/image_loader.html?type=text/html&id=0f366b01f628c5cd7e3590f53d57371449c484b91852060c7cb4d7a0b0ab8d70:ET:load_pathI"app/assets/javascripts;T:filenameI"Japp/assets/javascripts/spa-demo/layout/image_loader/image_loader.html;T:	nameI".spa-demo/layout/image_loader/image_loader;T:logical_pathI"3spa-demo/layout/image_loader/image_loader.html;T:content_typeI"text/html;T:sourceI"]<div class="crop-area" ng-show="$ctrl.file">
+ <ui-cropper image="$ctrl.file"
+             result-image="$ctrl.dataUri"
+             url-blob="$ctrl.objectUrl"
+             result-image-format="'image/jpeg'"
+             area-type="rectangle"
+             aspect-ratio="3/2"
+             result-image-size="{w:1200,h:800}">
+ </ui-cropper>
+</div>
+<input name="image-file"
+       type="file"
+       accept=".jpeg"
+       ng-hide="$ctrl.file" 
+       required="true"
+       ngf-select
+       ng-model="$ctrl.file"
+       ngf-fix-orientation="true"
+       ngf-max-size="10MB"
+       ngf-model-options="{allowInvalid: true}"       
+       >
+<img class="img-responsive image-preview"
+     ng-src="{{$ctrl.objectUrl}}"
+     ng-show="$ctrl.file && $ctrl.objectUrl">         
+
+<div ng-transclude></div>
+
+<!--
+<button ng-click="$ctrl.debug()">Debug</button>
+-->         
+
+;T:metadata{	:dependencieso:Set:
+@hash}
+I"environment-version;TTI"environment-paths;TTI"rails-env;TTI"2processors:type=text/html&file_type=text/html;TTI"Xfile-digest://app/assets/javascripts/spa-demo/layout/image_loader/image_loader.html;TTF:charsetI"
+utf-8;F:digest"%öª“Gàs­Ì¯ô¬½¦7y=ÁM2²²†-ãı ¡:lengthi]:dependencies_digest"%ÓŠÄ=åoN€e°mØ\$Ñ¤GøVî‡¹†):idI"E0f366b01f628c5cd7e3590f53d57371449c484b91852060c7cb4d7a0b0ab8d70;F:
+mtimel+Ïw=]

@@ -1,0 +1,13 @@
+{:uriI"file://app/assets/javascripts/spa-demo/layout/areas/area.html?type=text/html&id=395f7c977bd0f8d8da23cc868625011f25b4b98a35c3b08aea5497dd79a408a2:ET:load_pathI"app/assets/javascripts;T:filenameI";app/assets/javascripts/spa-demo/layout/areas/area.html;T:	nameI"spa-demo/layout/areas/area;T:logical_pathI"$spa-demo/layout/areas/area.html;T:content_typeI"text/html;T:sourceI"õ<div class="area-pane"
+     ng-if="$ctrl.show"
+     ng-class="{expanded: $ctrl.isExpanded()}">
+  <div class="area-transclude" ng-transclude></div>    
+
+  <input name="collapse-area"
+         type="checkbox"
+         ng-model="$ctrl.show">
+</div>;T:metadata{	:dependencieso:Set:
+@hash}
+I"environment-version;TTI"environment-paths;TTI"rails-env;TTI"2processors:type=text/html&file_type=text/html;TTI"Ifile-digest://app/assets/javascripts/spa-demo/layout/areas/area.html;TTF:charsetI"
+utf-8;F:digest"%İË¥¹î}ÍÓÖú§¨V‘‚º38x¼o(ã×çıÈíù”:lengthiõ:dependencies_digest"%ÉmÜÍ+RÊûÀòŠ§¤~ãªŸŞ‡§Kê,£«º¨Û»:idI"E395f7c977bd0f8d8da23cc868625011f25b4b98a35c3b08aea5497dd79a408a2;F:
+mtimel+Ïw=]

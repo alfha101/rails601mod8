@@ -1,0 +1,30 @@
+{:uriI"Ÿfile://app/assets/javascripts/spa-demo/layout/image_viewer/image_viewer.html?type=text/html&id=586daf906954b2e47f282b96391aee0ea130bbc2a3603344037cf10b84f08c4f:ET:load_pathI"app/assets/javascripts;T:filenameI"Japp/assets/javascripts/spa-demo/layout/image_viewer/image_viewer.html;T:	nameI".spa-demo/layout/image_viewer/image_viewer;T:logical_pathI"3spa-demo/layout/image_viewer/image_viewer.html;T:content_typeI"text/html;T:sourceI"1<div class="image-area">
+  <div class="image-items"
+       ng-repeat="image in $ctrl.images"       
+       ng-show="$ctrl.isCurrentIndex($index)">
+
+    <span class="id image_id">{{$ctrl.imageId(image)}}</span>    
+    <img class="responsive"
+         ng-src="{{$ctrl.imageUrl(image)}}">
+         
+    <span class="caption overlay">{{$ctrl.imageCaption(image)}}</span>
+
+    <span class="image-browse overlay"
+          ui-sref="images({id:$ctrl.imageId(image)})">
+      <span class="overlay glyphicon glyphicon-share-alt"></span>
+    </span>
+
+  </div>
+
+  <span class="overlay glyphicon glyphicon-chevron-left"
+        ng-click="$ctrl.previousImage()" ng-show="$ctrl.images"></span>
+
+  <span class="overlay glyphicon glyphicon-chevron-right"
+        ng-click="$ctrl.nextImage()" ng-show="$ctrl.images"></span>  
+</div>
+;T:metadata{	:dependencieso:Set:
+@hash}
+I"environment-version;TTI"environment-paths;TTI"rails-env;TTI"2processors:type=text/html&file_type=text/html;TTI"Xfile-digest://app/assets/javascripts/spa-demo/layout/image_viewer/image_viewer.html;TTF:charsetI"
+utf-8;F:digest"%€`…jâØ˜8Uçô•æ]{ÿ]ð‰B•˜NM¼£e˜kÂ:lengthi1:dependencies_digest"%…[ˆˆ}i
+IUz>ÔL—½"²õ&D0(™ŒM—J¸!):idI"E586daf906954b2e47f282b96391aee0ea130bbc2a3603344037cf10b84f08c4f;F:
+mtimel+é~C]

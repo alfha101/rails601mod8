@@ -1,0 +1,23 @@
+{:uriI"©file://app/assets/javascripts/spa-demo/subjects/current_things/current_thing_info.html?type=text/html&id=c50783c2815f7f5f09dfac5c061d3d39ef9a2bd80c5ae53c307d599a70421fd2:ET:load_pathI"app/assets/javascripts;T:filenameI"Tapp/assets/javascripts/spa-demo/subjects/current_things/current_thing_info.html;T:	nameI"8spa-demo/subjects/current_things/current_thing_info;T:logical_pathI"=spa-demo/subjects/current_things/current_thing_info.html;T:content_typeI"text/html;T:sourceI"J<div class="thing-info">
+  <h4>{{$ctrl.link.thing_name}}</h4>
+
+  <span class="id thing_id">{{$ctrl.link.thing_id}}</span>
+  <div class="distance" 
+       ng-if="$ctrl.link.distance">{{$ctrl.link.distance | number:1}} miles</div>
+  <p>
+    <div class="description">{{$ctrl.thing.description}}</div>
+  </p>
+  <p>
+    <div class="notes">{{$ctrl.thing.notes}}</div>
+  </p>
+
+  <span class="overlay glyphicon glyphicon-chevron-left"
+        ng-click="$ctrl.previousThing()"></span>
+
+  <span class="overlay glyphicon glyphicon-chevron-right"
+        ng-click="$ctrl.nextThing()"></span>
+</div>;T:metadata{	:dependencieso:Set:
+@hash}
+I"environment-version;TTI"environment-paths;TTI"rails-env;TTI"2processors:type=text/html&file_type=text/html;TTI"bfile-digest://app/assets/javascripts/spa-demo/subjects/current_things/current_thing_info.html;TTF:charsetI"
+utf-8;F:digest"%.$­F\‡ù¸˜Èå@İrò1~³¼/ÙŠy¶©ë± (:lengthiJ:dependencies_digest"%¢:=pFÂ,ùªšH:h¤SÓœ.s„Ù~SUFg;:idI"Ec50783c2815f7f5f09dfac5c061d3d39ef9a2bd80c5ae53c307d599a70421fd2;F:
+mtimel+Ïw=]
