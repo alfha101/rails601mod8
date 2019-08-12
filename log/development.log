@@ -5520,3 +5520,516 @@ ORDER BY c.conname
   [1m[36m (0.4ms)[0m  [1mSELECT COUNT(distinct thing_id) FROM "thing_images"[0m
   [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "images"
   [1m[36m (0.2ms)[0m  [1mSELECT COUNT(distinct image_id) FROM "thing_images"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (2.7ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'foos'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (2.3ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'images'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (2.6ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'roles'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (2.7ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'thing_images'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (2.6ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'things'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (2.3ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'users'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "things"[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "thing_images"
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "images"[0m
+  [1m[35m (2.9ms)[0m  ALTER TABLE "foos" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "images" DISABLE TRIGGER ALL;ALTER TABLE "thing_images" DISABLE TRIGGER ALL;ALTER TABLE "roles" DISABLE TRIGGER ALL;ALTER TABLE "things" DISABLE TRIGGER ALL
+  [1m[36m (1.6ms)[0m  [1m          SELECT schemaname || '.' || tablename
+          FROM pg_tables
+          WHERE
+            tablename !~ '_prt_' AND
+            tablename <> 'schema_migrations' AND
+            schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35m (3.6ms)[0m  select table_name from information_schema.views where table_schema = 'capstone_demoapp_development'
+  [1m[36m (47.1ms)[0m  [1mTRUNCATE TABLE "public"."foos", "public"."images", "public"."thing_images", "public"."roles", "public"."things" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (1.6ms)[0m  ALTER TABLE "foos" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "images" ENABLE TRIGGER ALL;ALTER TABLE "thing_images" ENABLE TRIGGER ALL;ALTER TABLE "roles" ENABLE TRIGGER ALL;ALTER TABLE "things" ENABLE TRIGGER ALL
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
+  [1m[35m (1.3ms)[0m  ALTER TABLE "foos" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "images" DISABLE TRIGGER ALL;ALTER TABLE "thing_images" DISABLE TRIGGER ALL;ALTER TABLE "roles" DISABLE TRIGGER ALL;ALTER TABLE "things" DISABLE TRIGGER ALL
+  [1m[36m (25.6ms)[0m  [1mTRUNCATE TABLE "users" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (1.9ms)[0m  ALTER TABLE "foos" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "images" ENABLE TRIGGER ALL;ALTER TABLE "thing_images" ENABLE TRIGGER ALL;ALTER TABLE "roles" ENABLE TRIGGER ALL;ALTER TABLE "things" ENABLE TRIGGER ALL
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.5ms)[0m  SELECT  1 AS one FROM "users" WHERE ("users"."email" = 'mike@bbunch.org' AND "users"."provider" = 'email') LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "users" ("name", "email", "encrypted_password", "tokens", "uid", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Mike Brady"], ["email", "mike@bbunch.org"], ["encrypted_password", "$2a$11$xEPfbNidWnFbZlVr4FGxreOfoXoMgsCsZLrjSaMTbZHoZCTrFDv6i"], ["tokens", "{}"], ["uid", "mike@bbunch.org"], ["created_at", "2019-08-11 16:30:39.243632"], ["updated_at", "2019-08-11 16:30:39.243632"]]
+  [1m[35m (0.9ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE ("users"."email" = 'carol@bbunch.org' AND "users"."provider" = 'email') LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("name", "email", "encrypted_password", "tokens", "uid", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Carol Brady"], ["email", "carol@bbunch.org"], ["encrypted_password", "$2a$11$MJzXi.DM0CKpWWuzP9qYJuWbYVPjoqk3HWYOx.NysIQdAqSzZKGzq"], ["tokens", "{}"], ["uid", "carol@bbunch.org"], ["created_at", "2019-08-11 16:30:39.387726"], ["updated_at", "2019-08-11 16:30:39.387726"]]
+  [1m[35m (1.2ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE ("users"."email" = 'alice@bbunch.org' AND "users"."provider" = 'email') LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("name", "email", "encrypted_password", "tokens", "uid", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Alice Nelson"], ["email", "alice@bbunch.org"], ["encrypted_password", "$2a$11$vZ804rkiLMcOjeepWzODJuz8x.aEcsbsbXhVdh49InqczeTbnaoaS"], ["tokens", "{}"], ["uid", "alice@bbunch.org"], ["created_at", "2019-08-11 16:30:39.530571"], ["updated_at", "2019-08-11 16:30:39.530571"]]
+  [1m[35m (1.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE ("users"."email" = 'greg@bbunch.org' AND "users"."provider" = 'email') LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("name", "email", "encrypted_password", "tokens", "uid", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Greg Brady"], ["email", "greg@bbunch.org"], ["encrypted_password", "$2a$11$fGfbdcmcud5RCMRceqY7heP3ECP/wzyNYDDJPuy1n9evTJemACCE."], ["tokens", "{}"], ["uid", "greg@bbunch.org"], ["created_at", "2019-08-11 16:30:39.673031"], ["updated_at", "2019-08-11 16:30:39.673031"]]
+  [1m[35m (1.1ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.4ms)[0m  SELECT  1 AS one FROM "users" WHERE ("users"."email" = 'marsha@bbunch.org' AND "users"."provider" = 'email') LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("name", "email", "encrypted_password", "tokens", "uid", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Marsha Brady"], ["email", "marsha@bbunch.org"], ["encrypted_password", "$2a$11$MW2oYxeqn6s6Wj9Uyg3Uq.vwRn.S./C2S32EL5YXBXd1xUV51WzVi"], ["tokens", "{}"], ["uid", "marsha@bbunch.org"], ["created_at", "2019-08-11 16:30:39.815980"], ["updated_at", "2019-08-11 16:30:39.815980"]]
+  [1m[35m (1.0ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.4ms)[0m  SELECT  1 AS one FROM "users" WHERE ("users"."email" = 'peter@bbunch.org' AND "users"."provider" = 'email') LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("name", "email", "encrypted_password", "tokens", "uid", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Peter Brady"], ["email", "peter@bbunch.org"], ["encrypted_password", "$2a$11$fo.7J/z3OB0cftRZ84kRQeNk1xb2xqSjfWYLEcrhUqNK6eiO9aV0."], ["tokens", "{}"], ["uid", "peter@bbunch.org"], ["created_at", "2019-08-11 16:30:39.958711"], ["updated_at", "2019-08-11 16:30:39.958711"]]
+  [1m[35m (1.0ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.4ms)[0m  SELECT  1 AS one FROM "users" WHERE ("users"."email" = 'jan@bbunch.org' AND "users"."provider" = 'email') LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("name", "email", "encrypted_password", "tokens", "uid", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Jan Brady"], ["email", "jan@bbunch.org"], ["encrypted_password", "$2a$11$h3aCYpHXWEJ/zc9erzz1M.1kVfBr/Aroc9JKvS9plK0cO6eDOH/Di"], ["tokens", "{}"], ["uid", "jan@bbunch.org"], ["created_at", "2019-08-11 16:30:40.103154"], ["updated_at", "2019-08-11 16:30:40.103154"]]
+  [1m[35m (1.0ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.4ms)[0m  SELECT  1 AS one FROM "users" WHERE ("users"."email" = 'bobby@bbunch.org' AND "users"."provider" = 'email') LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("name", "email", "encrypted_password", "tokens", "uid", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Bobby Brady"], ["email", "bobby@bbunch.org"], ["encrypted_password", "$2a$11$MJ6hZ1b5v6l7Brxp6lKHbO7ezntf9fB/2EVzOLH.MGva6taP41c7K"], ["tokens", "{}"], ["uid", "bobby@bbunch.org"], ["created_at", "2019-08-11 16:30:40.246023"], ["updated_at", "2019-08-11 16:30:40.246023"]]
+  [1m[35m (1.0ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.4ms)[0m  SELECT  1 AS one FROM "users" WHERE ("users"."email" = 'cindy@bbunch.org' AND "users"."provider" = 'email') LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("name", "email", "encrypted_password", "tokens", "uid", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Cindy Brady"], ["email", "cindy@bbunch.org"], ["encrypted_password", "$2a$11$EoIfh7n92CVYYB2PT.rygOtuO/zZkBmBNpCRfE6T6Ic6yhrsT38M."], ["tokens", "{}"], ["uid", "cindy@bbunch.org"], ["created_at", "2019-08-11 16:30:40.388957"], ["updated_at", "2019-08-11 16:30:40.388957"]]
+  [1m[35m (0.9ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE ("users"."email" = 'sam@bbunch.org' AND "users"."provider" = 'email') LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("name", "email", "encrypted_password", "tokens", "uid", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Sam Franklin"], ["email", "sam@bbunch.org"], ["encrypted_password", "$2a$11$dqMp00CurY8LCZF4DIBiNemmWzZkr0eViiJVtyYghCE42gbP/qIqC"], ["tokens", "{}"], ["uid", "sam@bbunch.org"], ["created_at", "2019-08-11 16:30:40.531739"], ["updated_at", "2019-08-11 16:30:40.531739"]]
+  [1m[35m (1.0ms)[0m  COMMIT
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1[0m  [["email", "mike@bbunch.org"]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1  [["email", "carol@bbunch.org"]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "roles" ("role_name", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["role_name", "admin"], ["user_id", 1], ["created_at", "2019-08-11 16:30:40.562459"], ["updated_at", "2019-08-11 16:30:40.562459"]]
+  [1m[36m (0.9ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "roles" ("role_name", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["role_name", "admin"], ["user_id", 2], ["created_at", "2019-08-11 16:30:40.566843"], ["updated_at", "2019-08-11 16:30:40.566843"]]
+  [1m[35m (0.7ms)[0m  COMMIT
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1[0m  [["email", "carol@bbunch.org"]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1  [["email", "alice@bbunch.org"]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "roles" ("role_name", "mname", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["role_name", "originator"], ["mname", "Thing"], ["user_id", 2], ["created_at", "2019-08-11 16:30:40.571428"], ["updated_at", "2019-08-11 16:30:40.571428"]]
+  [1m[36m (0.9ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "roles" ("role_name", "mname", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["role_name", "originator"], ["mname", "Thing"], ["user_id", 3], ["created_at", "2019-08-11 16:30:40.574785"], ["updated_at", "2019-08-11 16:30:40.574785"]]
+  [1m[35m (0.8ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mSELECT "users"."name" FROM "users"[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1  [["email", "alice@bbunch.org"]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1[0m  [["email", "greg@bbunch.org"]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1  [["email", "peter@bbunch.org"]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1[0m  [["email", "bobby@bbunch.org"]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "things" ("name", "description", "notes", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "B&O Railroad Museum"], ["description", "Discover your adventure at the B&O Railroad Museum in Baltimore, Maryland. Explore 40 acres of railroad history at the birthplace of American railroading. See, touch, and hear the most important American railroad collection in the world! Seasonal train rides for all ages."], ["notes", "Trains rule, boats and cars drool"], ["created_at", "2019-08-11 16:30:40.583718"], ["updated_at", "2019-08-11 16:30:40.583718"]]
+  [1m[35m (0.8ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "roles" ("role_name", "mname", "mid", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["role_name", "organizer"], ["mname", "Thing"], ["mid", 1], ["user_id", 3], ["created_at", "2019-08-11 16:30:40.587909"], ["updated_at", "2019-08-11 16:30:40.587909"]]
+  [1m[36m (1.5ms)[0m  [1mCOMMIT[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1  [["email", "mike@bbunch.org"]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "roles" ("role_name", "mname", "mid", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["role_name", "member"], ["mname", "Thing"], ["mid", 1], ["user_id", 4], ["created_at", "2019-08-11 16:30:40.595844"], ["updated_at", "2019-08-11 16:30:40.595844"]]
+  [1m[36m (1.0ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "roles" ("role_name", "mname", "mid", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["role_name", "member"], ["mname", "Thing"], ["mid", 1], ["user_id", 6], ["created_at", "2019-08-11 16:30:40.599686"], ["updated_at", "2019-08-11 16:30:40.599686"]]
+  [1m[35m (1.0ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "roles" ("role_name", "mname", "mid", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["role_name", "member"], ["mname", "Thing"], ["mid", 1], ["user_id", 8], ["created_at", "2019-08-11 16:30:40.603364"], ["updated_at", "2019-08-11 16:30:40.603364"]]
+  [1m[36m (1.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "images" ("creator_id", "caption", "lat", "lng", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["creator_id", 3], ["caption", "Front of Museum Restored: 1884 B&O Railroad Museum Roundhouse"], ["lat", 39.2854217], ["lng", -76.6327453], ["created_at", "2019-08-11 16:30:40.617911"], ["updated_at", "2019-08-11 16:30:40.617911"]]
+  [1m[35m (0.9ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "roles" ("role_name", "mname", "mid", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["role_name", "organizer"], ["mname", "Image"], ["mid", 1], ["user_id", 3], ["created_at", "2019-08-11 16:30:40.622559"], ["updated_at", "2019-08-11 16:30:40.622559"]]
+  [1m[36m (0.8ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "thing_images" ("thing_id", "image_id", "creator_id", "priority", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["thing_id", 1], ["image_id", 1], ["creator_id", 3], ["priority", 0], ["created_at", "2019-08-11 16:30:40.630373"], ["updated_at", "2019-08-11 16:30:40.630373"]]
+  [1m[35m (0.8ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "images" ("creator_id", "caption", "lat", "lng", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["creator_id", 3], ["caption", "Roundhouse Inside: One-of-a-Kind Railroad Collection inside the B&O Roundhouse"], ["lat", 39.2854217], ["lng", -76.6327453], ["created_at", "2019-08-11 16:30:42.582818"], ["updated_at", "2019-08-11 16:30:42.582818"]]
+  [1m[36m (0.9ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "roles" ("role_name", "mname", "mid", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["role_name", "organizer"], ["mname", "Image"], ["mid", 2], ["user_id", 3], ["created_at", "2019-08-11 16:30:42.586124"], ["updated_at", "2019-08-11 16:30:42.586124"]]
+  [1m[35m (0.8ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "thing_images" ("thing_id", "image_id", "creator_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["thing_id", 1], ["image_id", 2], ["creator_id", 3], ["created_at", "2019-08-11 16:30:42.589213"], ["updated_at", "2019-08-11 16:30:42.589213"]]
+  [1m[36m (0.8ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "images" ("creator_id", "caption", "lat", "lng", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["creator_id", 3], ["caption", "40 acres of railroad history at the B&O Railroad Museum"], ["lat", 39.2854217], ["lng", -76.6327453], ["created_at", "2019-08-11 16:30:44.798637"], ["updated_at", "2019-08-11 16:30:44.798637"]]
+  [1m[35m (1.0ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "roles" ("role_name", "mname", "mid", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["role_name", "organizer"], ["mname", "Image"], ["mid", 3], ["user_id", 3], ["created_at", "2019-08-11 16:30:44.801997"], ["updated_at", "2019-08-11 16:30:44.801997"]]
+  [1m[36m (0.9ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "thing_images" ("thing_id", "image_id", "creator_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["thing_id", 1], ["image_id", 3], ["creator_id", 3], ["created_at", "2019-08-11 16:30:44.805091"], ["updated_at", "2019-08-11 16:30:44.805091"]]
+  [1m[35m (0.8ms)[0m  COMMIT
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1[0m  [["email", "alice@bbunch.org"]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "things" ("name", "description", "notes", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Baltimore Water Taxi"], ["description", "The Water Taxi is more than a jaunt across the harbor; it’s a Baltimore institution and a way of life. Every day, thousands of residents and visitors not only rely on us to take them safely to their destinations, they appreciate our knowledge of the area and our courteous service. And every day, hundreds of local businesses rely on us to deliver customers to their locations.  We know the city. We love the city. We keep the city moving. We help keep businesses thriving. And most importantly, we offer the most unique way to see Baltimore and provide an unforgettable experience that keeps our passengers coming back again and again."], ["notes", "No on-duty pirates, please"], ["created_at", "2019-08-11 16:30:46.761581"], ["updated_at", "2019-08-11 16:30:46.761581"]]
+  [1m[35m (1.5ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "roles" ("role_name", "mname", "mid", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["role_name", "organizer"], ["mname", "Thing"], ["mid", 2], ["user_id", 3], ["created_at", "2019-08-11 16:30:46.765720"], ["updated_at", "2019-08-11 16:30:46.765720"]]
+  [1m[36m (1.0ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "roles" ("role_name", "mname", "mid", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["role_name", "member"], ["mname", "Thing"], ["mid", 2], ["user_id", 4], ["created_at", "2019-08-11 16:30:46.768895"], ["updated_at", "2019-08-11 16:30:46.768895"]]
+  [1m[35m (3.9ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "roles" ("role_name", "mname", "mid", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["role_name", "member"], ["mname", "Thing"], ["mid", 2], ["user_id", 6], ["created_at", "2019-08-11 16:30:46.774960"], ["updated_at", "2019-08-11 16:30:46.774960"]]
+  [1m[36m (1.0ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "roles" ("role_name", "mname", "mid", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["role_name", "member"], ["mname", "Thing"], ["mid", 2], ["user_id", 8], ["created_at", "2019-08-11 16:30:46.778161"], ["updated_at", "2019-08-11 16:30:46.778161"]]
+  [1m[35m (1.0ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "images" ("creator_id", "caption", "lat", "lng", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["creator_id", 3], ["caption", "Boat at Fort McHenry"], ["lat", 39.265882], ["lng", -76.578519], ["created_at", "2019-08-11 16:30:46.781407"], ["updated_at", "2019-08-11 16:30:46.781407"]]
+  [1m[36m (1.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "roles" ("role_name", "mname", "mid", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["role_name", "organizer"], ["mname", "Image"], ["mid", 4], ["user_id", 3], ["created_at", "2019-08-11 16:30:46.785380"], ["updated_at", "2019-08-11 16:30:46.785380"]]
+  [1m[35m (1.0ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "thing_images" ("thing_id", "image_id", "creator_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["thing_id", 2], ["image_id", 4], ["creator_id", 3], ["created_at", "2019-08-11 16:30:46.789353"], ["updated_at", "2019-08-11 16:30:46.789353"]]
+  [1m[36m (1.0ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "images" ("creator_id", "caption", "lat", "lng", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["creator_id", 3], ["caption", "Boat heading in to Fell's Point"], ["lat", 39.281676], ["lng", -76.593026], ["created_at", "2019-08-11 16:30:54.774653"], ["updated_at", "2019-08-11 16:30:54.774653"]]
+  [1m[35m (1.0ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "roles" ("role_name", "mname", "mid", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["role_name", "organizer"], ["mname", "Image"], ["mid", 5], ["user_id", 3], ["created_at", "2019-08-11 16:30:54.778094"], ["updated_at", "2019-08-11 16:30:54.778094"]]
+  [1m[36m (0.8ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "thing_images" ("thing_id", "image_id", "creator_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["thing_id", 2], ["image_id", 5], ["creator_id", 3], ["created_at", "2019-08-11 16:30:54.781031"], ["updated_at", "2019-08-11 16:30:54.781031"]]
+  [1m[35m (0.8ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "images" ("creator_id", "caption", "lat", "lng", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["creator_id", 3], ["caption", "Boat at Harborplace"], ["lat", 39.285887], ["lng", -76.611449], ["created_at", "2019-08-11 16:31:02.512051"], ["updated_at", "2019-08-11 16:31:02.512051"]]
+  [1m[36m (1.0ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "roles" ("role_name", "mname", "mid", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["role_name", "organizer"], ["mname", "Image"], ["mid", 6], ["user_id", 3], ["created_at", "2019-08-11 16:31:02.515762"], ["updated_at", "2019-08-11 16:31:02.515762"]]
+  [1m[35m (0.9ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "thing_images" ("thing_id", "image_id", "creator_id", "priority", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["thing_id", 2], ["image_id", 6], ["creator_id", 3], ["priority", 0], ["created_at", "2019-08-11 16:31:02.519255"], ["updated_at", "2019-08-11 16:31:02.519255"]]
+  [1m[36m (0.9ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "images" ("creator_id", "caption", "lat", "lng", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["creator_id", 3], ["caption", "Boat passing Pier 5"], ["lat", 39.284038], ["lng", -76.605206], ["created_at", "2019-08-11 16:31:11.309784"], ["updated_at", "2019-08-11 16:31:11.309784"]]
+  [1m[35m (3.8ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "roles" ("role_name", "mname", "mid", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["role_name", "organizer"], ["mname", "Image"], ["mid", 7], ["user_id", 3], ["created_at", "2019-08-11 16:31:11.315928"], ["updated_at", "2019-08-11 16:31:11.315928"]]
+  [1m[36m (0.9ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "thing_images" ("thing_id", "image_id", "creator_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["thing_id", 2], ["image_id", 7], ["creator_id", 3], ["created_at", "2019-08-11 16:31:11.318969"], ["updated_at", "2019-08-11 16:31:11.318969"]]
+  [1m[35m (1.1ms)[0m  COMMIT
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1[0m  [["email", "greg@bbunch.org"]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "things" ("name", "description", "notes", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Rent-A-Tour"], ["description", "Professional guide services and itinerary planner in Baltimore, Washington DC, Annapolis and the surronding region"], ["notes", "Bus is clean and ready to roll"], ["created_at", "2019-08-11 16:31:20.454789"], ["updated_at", "2019-08-11 16:31:20.454789"]]
+  [1m[35m (1.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "roles" ("role_name", "mname", "mid", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["role_name", "organizer"], ["mname", "Thing"], ["mid", 3], ["user_id", 4], ["created_at", "2019-08-11 16:31:20.458861"], ["updated_at", "2019-08-11 16:31:20.458861"]]
+  [1m[36m (3.9ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "roles" ("role_name", "mname", "mid", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["role_name", "member"], ["mname", "Thing"], ["mid", 3], ["user_id", 6], ["created_at", "2019-08-11 16:31:20.465274"], ["updated_at", "2019-08-11 16:31:20.465274"]]
+  [1m[35m (1.0ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "roles" ("role_name", "mname", "mid", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["role_name", "member"], ["mname", "Thing"], ["mid", 3], ["user_id", 8], ["created_at", "2019-08-11 16:31:20.469088"], ["updated_at", "2019-08-11 16:31:20.469088"]]
+  [1m[36m (1.0ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "images" ("creator_id", "caption", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["creator_id", 4], ["caption", "Overview"], ["created_at", "2019-08-11 16:31:20.473018"], ["updated_at", "2019-08-11 16:31:20.473018"]]
+  [1m[35m (1.0ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "roles" ("role_name", "mname", "mid", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["role_name", "organizer"], ["mname", "Image"], ["mid", 8], ["user_id", 4], ["created_at", "2019-08-11 16:31:20.476950"], ["updated_at", "2019-08-11 16:31:20.476950"]]
+  [1m[36m (1.0ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "thing_images" ("thing_id", "image_id", "creator_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["thing_id", 3], ["image_id", 8], ["creator_id", 4], ["created_at", "2019-08-11 16:31:20.480661"], ["updated_at", "2019-08-11 16:31:20.480661"]]
+  [1m[35m (0.9ms)[0m  COMMIT
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "images" ("creator_id", "caption", "lat", "lng", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["creator_id", 4], ["caption", "Roger Taney Statue"], ["lat", 39.297953], ["lng", -76.615686], ["created_at", "2019-08-11 16:31:22.508142"], ["updated_at", "2019-08-11 16:31:22.508142"]]
+  [1m[36m (1.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "roles" ("role_name", "mname", "mid", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["role_name", "organizer"], ["mname", "Image"], ["mid", 9], ["user_id", 4], ["created_at", "2019-08-11 16:31:22.512439"], ["updated_at", "2019-08-11 16:31:22.512439"]]
+  [1m[35m (0.9ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "thing_images" ("thing_id", "image_id", "creator_id", "priority", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["thing_id", 3], ["image_id", 9], ["creator_id", 4], ["priority", 0], ["created_at", "2019-08-11 16:31:22.516011"], ["updated_at", "2019-08-11 16:31:22.516011"]]
+  [1m[36m (0.9ms)[0m  [1mCOMMIT[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1  [["email", "carol@bbunch.org"]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1[0m  [["email", "marsha@bbunch.org"]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1  [["email", "jan@bbunch.org"]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1[0m  [["email", "cindy@bbunch.org"]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "things" ("name", "description", "notes", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Holiday Inn Timonium"], ["description", "Group friendly located just a few miles north of Baltimore's Inner Harbor. Great neighborhood in Baltimore County"], ["notes", "Early to bed, early to rise"], ["created_at", "2019-08-11 16:31:23.943838"], ["updated_at", "2019-08-11 16:31:23.943838"]]
+  [1m[35m (1.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "roles" ("role_name", "mname", "mid", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["role_name", "organizer"], ["mname", "Thing"], ["mid", 4], ["user_id", 2], ["created_at", "2019-08-11 16:31:23.947623"], ["updated_at", "2019-08-11 16:31:23.947623"]]
+  [1m[36m (0.9ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "roles" ("role_name", "mname", "mid", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["role_name", "member"], ["mname", "Thing"], ["mid", 4], ["user_id", 5], ["created_at", "2019-08-11 16:31:23.950811"], ["updated_at", "2019-08-11 16:31:23.950811"]]
+  [1m[35m (0.9ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "roles" ("role_name", "mname", "mid", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["role_name", "member"], ["mname", "Thing"], ["mid", 4], ["user_id", 7], ["created_at", "2019-08-11 16:31:23.953942"], ["updated_at", "2019-08-11 16:31:23.953942"]]
+  [1m[36m (0.9ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "roles" ("role_name", "mname", "mid", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["role_name", "member"], ["mname", "Thing"], ["mid", 4], ["user_id", 9], ["created_at", "2019-08-11 16:31:23.957207"], ["updated_at", "2019-08-11 16:31:23.957207"]]
+  [1m[35m (0.9ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "images" ("creator_id", "caption", "lat", "lng", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["creator_id", 2], ["caption", "Hotel Front Entrance"], ["lat", 39.454538], ["lng", -76.64285450000001], ["created_at", "2019-08-11 16:31:23.960092"], ["updated_at", "2019-08-11 16:31:23.960092"]]
+  [1m[36m (0.9ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "roles" ("role_name", "mname", "mid", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["role_name", "organizer"], ["mname", "Image"], ["mid", 10], ["user_id", 2], ["created_at", "2019-08-11 16:31:23.963143"], ["updated_at", "2019-08-11 16:31:23.963143"]]
+  [1m[35m (0.9ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "thing_images" ("thing_id", "image_id", "creator_id", "priority", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["thing_id", 4], ["image_id", 10], ["creator_id", 2], ["priority", 0], ["created_at", "2019-08-11 16:31:23.966449"], ["updated_at", "2019-08-11 16:31:23.966449"]]
+  [1m[36m (2.2ms)[0m  [1mCOMMIT[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1  [["email", "carol@bbunch.org"]]
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "things" ("name", "description", "notes", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "National Aquarium"], ["description", "Since first opening in 1981, the National Aquarium has become a world-class attraction in the heart of Baltimore. Recently celebrating our 35th Anniversary, we continue to be a symbol of urban renewal and a source of pride for Marylanders. With a mission to inspire the world’s aquatic treasures, the Aquarium is consistently ranked as one of the nation’s top aquariums and has hosted over 51 million guests since opening. A study by the Maryland Department of Economic and Employment Development determined that the Aquarium annually generates nearly $220 million in revenues, 2,000 jobs, and $6.8 million in State and local taxes. It was also recently named one of Baltimore’s Best Places to Work! In addition to housing nearly 20,000 animals, we have countless science-based education programs and hands-on conservation projects spanning from right here in the Chesapeake Bay to abroad in Costa Rica. Once you head inside, The National Aquarium has the ability to transport you all over the world in a matter of hours to discover hundreds of incredible species. From the Freshwater Crocodile in our Australia: Wild Extremes exhibit all the way to a Largetooth Sawfish in the depths of Shark Alley. Recently winning top honors from the Association of Zoos and Aquariums for outstanding design, exhibit innovation and guest engagement, we can’t forget about Living Seashore; an exhibit where guests can touch Atlantic stingrays, Horseshoe crabs, and even Moon jellies if they wish! It is a place for friends, family, and people from all walks of life to come and learn about the extraordinary creatures we share our planet with. Through education, research, conservation action and advocacy, the National Aquarium is truly pursuing a vision to change the way humanity cares for our ocean planet."], ["notes", "Remember to water the fish"], ["created_at", "2019-08-11 16:31:25.123367"], ["updated_at", "2019-08-11 16:31:25.123367"]]
+  [1m[36m (1.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "roles" ("role_name", "mname", "mid", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["role_name", "organizer"], ["mname", "Thing"], ["mid", 5], ["user_id", 2], ["created_at", "2019-08-11 16:31:25.127363"], ["updated_at", "2019-08-11 16:31:25.127363"]]
+  [1m[35m (0.9ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "roles" ("role_name", "mname", "mid", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["role_name", "member"], ["mname", "Thing"], ["mid", 5], ["user_id", 5], ["created_at", "2019-08-11 16:31:25.130897"], ["updated_at", "2019-08-11 16:31:25.130897"]]
+  [1m[36m (1.0ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "roles" ("role_name", "mname", "mid", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["role_name", "member"], ["mname", "Thing"], ["mid", 5], ["user_id", 7], ["created_at", "2019-08-11 16:31:25.134380"], ["updated_at", "2019-08-11 16:31:25.134380"]]
+  [1m[35m (0.9ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "roles" ("role_name", "mname", "mid", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["role_name", "member"], ["mname", "Thing"], ["mid", 5], ["user_id", 9], ["created_at", "2019-08-11 16:31:25.137507"], ["updated_at", "2019-08-11 16:31:25.137507"]]
+  [1m[36m (0.9ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "images" ("creator_id", "caption", "lat", "lng", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["creator_id", 2], ["caption", "National Aquarium buildings"], ["lat", 39.2851], ["lng", -76.6083], ["created_at", "2019-08-11 16:31:25.140525"], ["updated_at", "2019-08-11 16:31:25.140525"]]
+  [1m[35m (0.9ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "roles" ("role_name", "mname", "mid", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["role_name", "organizer"], ["mname", "Image"], ["mid", 11], ["user_id", 2], ["created_at", "2019-08-11 16:31:25.143812"], ["updated_at", "2019-08-11 16:31:25.143812"]]
+  [1m[36m (3.9ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "thing_images" ("thing_id", "image_id", "creator_id", "priority", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["thing_id", 5], ["image_id", 11], ["creator_id", 2], ["priority", 0], ["created_at", "2019-08-11 16:31:25.150245"], ["updated_at", "2019-08-11 16:31:25.150245"]]
+  [1m[35m (1.6ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "images" ("creator_id", "caption", "lat", "lng", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["creator_id", 2], ["caption", "Blue Blubber Jellies"], ["lat", 39.2851], ["lng", -76.6083], ["created_at", "2019-08-11 16:31:28.907050"], ["updated_at", "2019-08-11 16:31:28.907050"]]
+  [1m[36m (0.9ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "roles" ("role_name", "mname", "mid", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["role_name", "organizer"], ["mname", "Image"], ["mid", 12], ["user_id", 2], ["created_at", "2019-08-11 16:31:28.910302"], ["updated_at", "2019-08-11 16:31:28.910302"]]
+  [1m[35m (0.9ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "thing_images" ("thing_id", "image_id", "creator_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["thing_id", 5], ["image_id", 12], ["creator_id", 2], ["created_at", "2019-08-11 16:31:28.913514"], ["updated_at", "2019-08-11 16:31:28.913514"]]
+  [1m[36m (0.9ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "images" ("creator_id", "caption", "lat", "lng", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["creator_id", 2], ["caption", "Linne's two-toed sloths"], ["lat", 39.2851], ["lng", -76.6083], ["created_at", "2019-08-11 16:31:30.013167"], ["updated_at", "2019-08-11 16:31:30.013167"]]
+  [1m[35m (1.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "roles" ("role_name", "mname", "mid", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["role_name", "organizer"], ["mname", "Image"], ["mid", 13], ["user_id", 2], ["created_at", "2019-08-11 16:31:30.017054"], ["updated_at", "2019-08-11 16:31:30.017054"]]
+  [1m[36m (0.9ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "thing_images" ("thing_id", "image_id", "creator_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["thing_id", 5], ["image_id", 13], ["creator_id", 2], ["created_at", "2019-08-11 16:31:30.020134"], ["updated_at", "2019-08-11 16:31:30.020134"]]
+  [1m[35m (0.9ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "images" ("creator_id", "caption", "lat", "lng", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["creator_id", 2], ["caption", "Hosting millions of students and teachers"], ["lat", 39.2851], ["lng", -76.6083], ["created_at", "2019-08-11 16:31:31.710289"], ["updated_at", "2019-08-11 16:31:31.710289"]]
+  [1m[36m (1.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "roles" ("role_name", "mname", "mid", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["role_name", "organizer"], ["mname", "Image"], ["mid", 14], ["user_id", 2], ["created_at", "2019-08-11 16:31:31.713959"], ["updated_at", "2019-08-11 16:31:31.713959"]]
+  [1m[35m (0.9ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "thing_images" ("thing_id", "image_id", "creator_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["thing_id", 5], ["image_id", 14], ["creator_id", 2], ["created_at", "2019-08-11 16:31:31.717283"], ["updated_at", "2019-08-11 16:31:31.717283"]]
+  [1m[36m (0.8ms)[0m  [1mCOMMIT[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1  [["email", "marsha@bbunch.org"]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "things" ("name", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["name", "Hyatt Place Baltimore"], ["description", "The New Hyatt Place Baltimore/Inner Harbor, located near Fells Point, offers a refreshing blend of style and innovation in a neighborhood alive with cultural attractions, shopping and amazing local restaurants. \n\nWhether you’re hungry, thirsty or bored, Hyatt Place Baltimore/Inner Harbor has something to satisfy your needs. Start your day with our free a.m. Kitchen Skillet™, featuring hot breakfast sandwiches, breads, cereals and more. Visit our 24/7 Gallery Market for freshly packaged grab n’ go items, order a hot, made-to-order appetizer or sandwich from our 24/7 Gallery Menu or enjoy a refreshing beverage from our Coffee to Cocktails Bar.\n \nWork up a sweat in our 24-hour StayFit Gym, which features Life Fitness® cardio equipment and free weights. Then, float and splash around in our indoor pool, open year-round for your relaxation. There’s plenty of other spaces throughout our Inner Harbor hotel for you to chill and socialize with other guests. For your comfort and convenience, all Hyatt Place hotels are smoke-free.\n"], ["created_at", "2019-08-11 16:31:33.085160"], ["updated_at", "2019-08-11 16:31:33.085160"]]
+  [1m[36m (4.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "roles" ("role_name", "mname", "mid", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["role_name", "organizer"], ["mname", "Thing"], ["mid", 6], ["user_id", 5], ["created_at", "2019-08-11 16:31:33.091715"], ["updated_at", "2019-08-11 16:31:33.091715"]]
+  [1m[35m (0.8ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "roles" ("role_name", "mname", "mid", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["role_name", "member"], ["mname", "Thing"], ["mid", 6], ["user_id", 7], ["created_at", "2019-08-11 16:31:33.094573"], ["updated_at", "2019-08-11 16:31:33.094573"]]
+  [1m[36m (0.8ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "roles" ("role_name", "mname", "mid", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["role_name", "member"], ["mname", "Thing"], ["mid", 6], ["user_id", 9], ["created_at", "2019-08-11 16:31:33.097311"], ["updated_at", "2019-08-11 16:31:33.097311"]]
+  [1m[35m (0.9ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "images" ("creator_id", "caption", "lat", "lng", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["creator_id", 5], ["caption", "Hotel Front Entrance"], ["lat", 39.2847], ["lng", -76.5987], ["created_at", "2019-08-11 16:31:33.100103"], ["updated_at", "2019-08-11 16:31:33.100103"]]
+  [1m[36m (0.9ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "roles" ("role_name", "mname", "mid", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["role_name", "organizer"], ["mname", "Image"], ["mid", 15], ["user_id", 5], ["created_at", "2019-08-11 16:31:33.103135"], ["updated_at", "2019-08-11 16:31:33.103135"]]
+  [1m[35m (0.9ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "thing_images" ("thing_id", "image_id", "creator_id", "priority", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["thing_id", 6], ["image_id", 15], ["creator_id", 5], ["priority", 0], ["created_at", "2019-08-11 16:31:33.106202"], ["updated_at", "2019-08-11 16:31:33.106202"]]
+  [1m[36m (0.8ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "images" ("creator_id", "caption", "lat", "lng", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["creator_id", 5], ["caption", "Terrace"], ["lat", 39.2847], ["lng", -76.5987], ["created_at", "2019-08-11 16:31:34.453330"], ["updated_at", "2019-08-11 16:31:34.453330"]]
+  [1m[35m (1.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "roles" ("role_name", "mname", "mid", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["role_name", "organizer"], ["mname", "Image"], ["mid", 16], ["user_id", 5], ["created_at", "2019-08-11 16:31:34.456986"], ["updated_at", "2019-08-11 16:31:34.456986"]]
+  [1m[36m (0.9ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "thing_images" ("thing_id", "image_id", "creator_id", "priority", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["thing_id", 6], ["image_id", 16], ["creator_id", 5], ["priority", 1], ["created_at", "2019-08-11 16:31:34.460062"], ["updated_at", "2019-08-11 16:31:34.460062"]]
+  [1m[35m (0.8ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "images" ("creator_id", "caption", "lat", "lng", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["creator_id", 5], ["caption", "Cozy Corner"], ["lat", 39.2847], ["lng", -76.5987], ["created_at", "2019-08-11 16:31:35.752073"], ["updated_at", "2019-08-11 16:31:35.752073"]]
+  [1m[36m (1.0ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "roles" ("role_name", "mname", "mid", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["role_name", "organizer"], ["mname", "Image"], ["mid", 17], ["user_id", 5], ["created_at", "2019-08-11 16:31:35.755506"], ["updated_at", "2019-08-11 16:31:35.755506"]]
+  [1m[35m (0.9ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "thing_images" ("thing_id", "image_id", "creator_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["thing_id", 6], ["image_id", 17], ["creator_id", 5], ["created_at", "2019-08-11 16:31:35.758593"], ["updated_at", "2019-08-11 16:31:35.758593"]]
+  [1m[36m (0.8ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "images" ("creator_id", "caption", "lat", "lng", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["creator_id", 5], ["caption", "Fitness Center"], ["lat", 39.2847], ["lng", -76.5987], ["created_at", "2019-08-11 16:31:37.030822"], ["updated_at", "2019-08-11 16:31:37.030822"]]
+  [1m[35m (1.2ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "roles" ("role_name", "mname", "mid", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["role_name", "organizer"], ["mname", "Image"], ["mid", 18], ["user_id", 5], ["created_at", "2019-08-11 16:31:37.034366"], ["updated_at", "2019-08-11 16:31:37.034366"]]
+  [1m[36m (3.8ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "thing_images" ("thing_id", "image_id", "creator_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["thing_id", 6], ["image_id", 18], ["creator_id", 5], ["created_at", "2019-08-11 16:31:37.040592"], ["updated_at", "2019-08-11 16:31:37.040592"]]
+  [1m[35m (1.4ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "images" ("creator_id", "caption", "lat", "lng", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["creator_id", 5], ["caption", "Gallery Area"], ["lat", 39.2847], ["lng", -76.5987], ["created_at", "2019-08-11 16:31:38.336080"], ["updated_at", "2019-08-11 16:31:38.336080"]]
+  [1m[36m (1.0ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "roles" ("role_name", "mname", "mid", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["role_name", "organizer"], ["mname", "Image"], ["mid", 19], ["user_id", 5], ["created_at", "2019-08-11 16:31:38.339659"], ["updated_at", "2019-08-11 16:31:38.339659"]]
+  [1m[35m (0.9ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "thing_images" ("thing_id", "image_id", "creator_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["thing_id", 6], ["image_id", 19], ["creator_id", 5], ["created_at", "2019-08-11 16:31:38.342866"], ["updated_at", "2019-08-11 16:31:38.342866"]]
+  [1m[36m (0.8ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "images" ("creator_id", "caption", "lat", "lng", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["creator_id", 5], ["caption", "Harbor Room"], ["lat", 39.2847], ["lng", -76.5987], ["created_at", "2019-08-11 16:31:39.744008"], ["updated_at", "2019-08-11 16:31:39.744008"]]
+  [1m[35m (1.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "roles" ("role_name", "mname", "mid", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["role_name", "organizer"], ["mname", "Image"], ["mid", 20], ["user_id", 5], ["created_at", "2019-08-11 16:31:39.747391"], ["updated_at", "2019-08-11 16:31:39.747391"]]
+  [1m[36m (0.8ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "thing_images" ("thing_id", "image_id", "creator_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["thing_id", 6], ["image_id", 20], ["creator_id", 5], ["created_at", "2019-08-11 16:31:39.750491"], ["updated_at", "2019-08-11 16:31:39.750491"]]
+  [1m[35m (0.9ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "images" ("creator_id", "caption", "lat", "lng", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["creator_id", 5], ["caption", "Indoor Pool"], ["lat", 39.2847], ["lng", -76.5987], ["created_at", "2019-08-11 16:31:41.062839"], ["updated_at", "2019-08-11 16:31:41.062839"]]
+  [1m[36m (1.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "roles" ("role_name", "mname", "mid", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["role_name", "organizer"], ["mname", "Image"], ["mid", 21], ["user_id", 5], ["created_at", "2019-08-11 16:31:41.066404"], ["updated_at", "2019-08-11 16:31:41.066404"]]
+  [1m[35m (0.9ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "thing_images" ("thing_id", "image_id", "creator_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["thing_id", 6], ["image_id", 21], ["creator_id", 5], ["created_at", "2019-08-11 16:31:41.069459"], ["updated_at", "2019-08-11 16:31:41.069459"]]
+  [1m[36m (4.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "images" ("creator_id", "caption", "lat", "lng", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["creator_id", 5], ["caption", "Lobby"], ["lat", 39.2847], ["lng", -76.5987], ["created_at", "2019-08-11 16:31:42.495148"], ["updated_at", "2019-08-11 16:31:42.495148"]]
+  [1m[35m (0.9ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "roles" ("role_name", "mname", "mid", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["role_name", "organizer"], ["mname", "Image"], ["mid", 22], ["user_id", 5], ["created_at", "2019-08-11 16:31:42.498585"], ["updated_at", "2019-08-11 16:31:42.498585"]]
+  [1m[36m (0.9ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "thing_images" ("thing_id", "image_id", "creator_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["thing_id", 6], ["image_id", 22], ["creator_id", 5], ["created_at", "2019-08-11 16:31:42.501929"], ["updated_at", "2019-08-11 16:31:42.501929"]]
+  [1m[35m (0.9ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "images" ("creator_id", "caption", "lat", "lng", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["creator_id", 5], ["caption", "Specialty King"], ["lat", 39.2847], ["lng", -76.5987], ["created_at", "2019-08-11 16:31:43.827864"], ["updated_at", "2019-08-11 16:31:43.827864"]]
+  [1m[36m (3.7ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "roles" ("role_name", "mname", "mid", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["role_name", "organizer"], ["mname", "Image"], ["mid", 23], ["user_id", 5], ["created_at", "2019-08-11 16:31:43.833967"], ["updated_at", "2019-08-11 16:31:43.833967"]]
+  [1m[35m (0.9ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "thing_images" ("thing_id", "image_id", "creator_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["thing_id", 6], ["image_id", 23], ["creator_id", 5], ["created_at", "2019-08-11 16:31:43.837312"], ["updated_at", "2019-08-11 16:31:43.837312"]]
+  [1m[36m (0.9ms)[0m  [1mCOMMIT[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1  [["email", "peter@bbunch.org"]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "images" ("creator_id", "caption", "lat", "lng", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["creator_id", 6], ["caption", "Aquarium"], ["lat", 39.2851], ["lng", -76.6083], ["created_at", "2019-08-11 16:31:45.122689"], ["updated_at", "2019-08-11 16:31:45.122689"]]
+  [1m[36m (1.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "roles" ("role_name", "mname", "mid", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["role_name", "organizer"], ["mname", "Image"], ["mid", 24], ["user_id", 6], ["created_at", "2019-08-11 16:31:45.126464"], ["updated_at", "2019-08-11 16:31:45.126464"]]
+  [1m[35m (0.9ms)[0m  COMMIT
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1[0m  [["email", "jan@bbunch.org"]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "images" ("creator_id", "caption", "lat", "lng", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["creator_id", 7], ["caption", "Bromo Tower"], ["lat", 39.2876736], ["lng", -76.6228645], ["created_at", "2019-08-11 16:31:47.766417"], ["updated_at", "2019-08-11 16:31:47.766417"]]
+  [1m[35m (4.2ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "roles" ("role_name", "mname", "mid", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["role_name", "organizer"], ["mname", "Image"], ["mid", 25], ["user_id", 7], ["created_at", "2019-08-11 16:31:47.773225"], ["updated_at", "2019-08-11 16:31:47.773225"]]
+  [1m[36m (0.9ms)[0m  [1mCOMMIT[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1  [["email", "bobby@bbunch.org"]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "images" ("creator_id", "caption", "lat", "lng", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["creator_id", 8], ["caption", "Federal Hill"], ["lat", 39.2780092], ["lng", -76.6152507], ["created_at", "2019-08-11 16:31:50.325263"], ["updated_at", "2019-08-11 16:31:50.325263"]]
+  [1m[36m (0.9ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "roles" ("role_name", "mname", "mid", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["role_name", "organizer"], ["mname", "Image"], ["mid", 26], ["user_id", 8], ["created_at", "2019-08-11 16:31:50.328925"], ["updated_at", "2019-08-11 16:31:50.328925"]]
+  [1m[35m (0.9ms)[0m  COMMIT
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1[0m  [["email", "alice@bbunch.org"]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "images" ("creator_id", "caption", "lat", "lng", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["creator_id", 3], ["caption", "Row Homes"], ["lat", 39.3149715], ["lng", -76.6152153], ["created_at", "2019-08-11 16:31:52.407727"], ["updated_at", "2019-08-11 16:31:52.407727"]]
+  [1m[35m (1.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "roles" ("role_name", "mname", "mid", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["role_name", "organizer"], ["mname", "Image"], ["mid", 27], ["user_id", 3], ["created_at", "2019-08-11 16:31:52.412269"], ["updated_at", "2019-08-11 16:31:52.412269"]]
+  [1m[36m (0.9ms)[0m  [1mCOMMIT[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1  [["email", "alice@bbunch.org"]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "images" ("creator_id", "caption", "lat", "lng", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["creator_id", 3], ["caption", "Skyline Water Level"], ["lat", 39.281114], ["lng", -76.606205], ["created_at", "2019-08-11 16:31:53.190054"], ["updated_at", "2019-08-11 16:31:53.190054"]]
+  [1m[36m (1.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "roles" ("role_name", "mname", "mid", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["role_name", "organizer"], ["mname", "Image"], ["mid", 28], ["user_id", 3], ["created_at", "2019-08-11 16:31:53.194409"], ["updated_at", "2019-08-11 16:31:53.194409"]]
+  [1m[35m (0.9ms)[0m  COMMIT
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1[0m  [["email", "bobby@bbunch.org"]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "images" ("creator_id", "caption", "lat", "lng", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["creator_id", 8], ["caption", "Skyline"], ["lat", 39.2801504], ["lng", -76.6138132], ["created_at", "2019-08-11 16:31:55.920233"], ["updated_at", "2019-08-11 16:31:55.920233"]]
+  [1m[35m (1.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "roles" ("role_name", "mname", "mid", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["role_name", "organizer"], ["mname", "Image"], ["mid", 29], ["user_id", 8], ["created_at", "2019-08-11 16:31:55.924458"], ["updated_at", "2019-08-11 16:31:55.924458"]]
+  [1m[36m (0.8ms)[0m  [1mCOMMIT[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1  [["email", "marsha@bbunch.org"]]
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "images" ("creator_id", "caption", "lat", "lng", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["creator_id", 5], ["caption", "Visitor Center"], ["lat", 39.28565], ["lng", -76.6155792], ["created_at", "2019-08-11 16:31:58.551475"], ["updated_at", "2019-08-11 16:31:58.551475"]]
+  [1m[36m (1.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (4.5ms)[0m  [1mINSERT INTO "roles" ("role_name", "mname", "mid", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["role_name", "organizer"], ["mname", "Image"], ["mid", 30], ["user_id", 5], ["created_at", "2019-08-11 16:31:58.557556"], ["updated_at", "2019-08-11 16:31:58.557556"]]
+  [1m[35m (1.0ms)[0m  COMMIT
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1[0m  [["email", "greg@bbunch.org"]]
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "images" ("creator_id", "caption", "lat", "lng", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["creator_id", 4], ["caption", "World Trade Center"], ["lat", 39.2858057], ["lng", -76.6117195], ["created_at", "2019-08-11 16:31:59.378787"], ["updated_at", "2019-08-11 16:31:59.378787"]]
+  [1m[35m (4.1ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "roles" ("role_name", "mname", "mid", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["role_name", "organizer"], ["mname", "Image"], ["mid", 31], ["user_id", 4], ["created_at", "2019-08-11 16:31:59.385684"], ["updated_at", "2019-08-11 16:31:59.385684"]]
+  [1m[36m (0.9ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "things"
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(distinct thing_id) FROM "thing_images"[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "images"
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(distinct image_id) FROM "thing_images"[0m
