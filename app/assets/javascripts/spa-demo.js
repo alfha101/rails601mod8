@@ -63,6 +63,12 @@
 //= require spa-demo/subjects/things/things_authz.service
 //= require spa-demo/subjects/things/things_authz.directive
 //= require spa-demo/subjects/things/things.component
+//= require spa-demo/subjects/types/types.service
+//= require spa-demo/subjects/types/types_authz.service
+//= require spa-demo/subjects/types/type_things.service
+//= require spa-demo/subjects/types/type_linkable_things.service
+//= require spa-demo/subjects/types/types.component
+//= require spa-demo/subjects/types/types_authz.directive
 
 //= require spa-demo/subjects/current_subjects/current_subjects.service
 //= require spa-demo/subjects/current_subjects/current_subjects.component

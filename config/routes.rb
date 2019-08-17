@@ -13,6 +13,13 @@ Rails.application.routes.draw do
       get "thing_images",  controller: :thing_images, action: :image_things
       get "linkable_things",  controller: :thing_images, action: :linkable_things
     end
+
+    resources :types, except: [:new, :edit] do
+      post "thing_types",  controller: :thing_types, action: :create
+      get "thing_types",  controller: :thing_types, action: :type_things
+      get "linkable_things",  controller: :thing_types, action: :linkable_things
+    end
+
     resources :things, except: [:new, :edit] do
       resources :thing_images, only: [:index, :create, :update, :destroy]
     end

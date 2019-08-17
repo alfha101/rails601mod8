@@ -1,12 +1,15 @@
 
 form.thing-form .id,
 div.thing-list .id,
+form.type-form .id,
+div.type-list .id,
 form.image-form .id,
 div.image-list .id {
   display: none;
 }
 
 sd-image-editor form,
+sd-type-editor form,
 sd-thing-editor form {
   padding-left: 15px;
   padding-right: 15px;
@@ -17,6 +20,10 @@ div.images-area {
   padding-right: 15px;
 }
 div.things-area {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+div.types-area {
   padding-left: 15px;
   padding-right: 15px;
 }

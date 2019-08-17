@@ -1,0 +1,11 @@
+{:uriI"file://app/assets/javascripts/spa-demo/pages/types_page.html?type=text/html&id=9f39064acbf4e4a9349f7fee70f6def46a45e6d3066f3a4650ce83f84013b1eb:ET:load_pathI"app/assets/javascripts;T:filenameI":app/assets/javascripts/spa-demo/pages/types_page.html;T:	nameI"spa-demo/pages/types_page;T:logical_pathI"#spa-demo/pages/types_page.html;T:content_typeI"text/html;T:sourceI"¹<div class="types-area" sd-types-authz>
+    <h3>Types</h3>
+    <sd-type-editor authz="vm.authz"></sd-type-editor>
+    <sd-type-selector authz="vm.authz"></sd-type-selector>    
+  </div>;T:metadata{	:dependencieso:Set:
+@hash}
+I"environment-version;TTI"environment-paths;TTI"rails-env;TTI"2processors:type=text/html&file_type=text/html;TTI"Hfile-digest://app/assets/javascripts/spa-demo/pages/types_page.html;TTF:charsetI"
+utf-8;F:digest"%Ÿ,E—Ğ§x©=e5ø!H¶”Ü
+Éøxè‘ì¼:lengthi¹:dependencies_digest"%µ}¥ÈT¼
+Ş‘‡½z˜émÇr¦F†¬ÿqcX‰‹:idI"E9f39064acbf4e4a9349f7fee70f6def46a45e6d3066f3a4650ce83f84013b1eb;F:
+mtimel+ĞÔQ]

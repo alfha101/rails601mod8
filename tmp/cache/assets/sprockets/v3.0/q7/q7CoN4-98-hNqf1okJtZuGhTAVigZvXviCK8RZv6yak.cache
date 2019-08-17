@@ -1,0 +1,61 @@
+{:uriI"ìfile://app/assets/javascripts/spa-demo/layout/navbar/navbar.html?type=text/html&id=6824c55a32564e6dc9555571f74e2b133b381b7247b80fbe2e7833a3d46332ec:ET:load_pathI"app/assets/javascripts;T:filenameI">app/assets/javascripts/spa-demo/layout/navbar/navbar.html;T:	nameI""spa-demo/layout/navbar/navbar;T:logical_pathI"'spa-demo/layout/navbar/navbar.html;T:content_typeI"text/html;T:sourceI"Ù<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" ui-sref="home">Brand</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Go To<span class="caret"></span></a>
+
+          <ul class="dropdown-menu">
+            <li ui-sref-active="active">
+                <a ui-sref="authn">Authentication Check</a></li>
+            <li ui-sref-active="{'active': 'images'}">
+                <a ui-sref="images({id:null})">Images</a></li>
+            <li ui-sref-active="{'active': 'things'}">
+                <a ui-sref="things({id:null})">Things</a></li>
+            <li ui-sref-active="active">
+                <a ui-sref="home">Subjects</a></li>
+                <li ui-sref-active="{'active': 'types'}">
+                  <a ui-sref="types({id:null})">Types</a></li>
+          </ul>
+          
+        </li>
+      </ul>
+      
+      <span class="origin-control navbar-left">
+        <sd-current-origin-selector></sd-current-origin-selector>
+      </span>
+
+      <ul class="nav navbar-nav navbar-right">
+        <li id="login-dropdown" class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+          <span id="navbar-loginlabel">{{$ctrl.getLoginLabel()}}</span>
+          <span class="caret"></span></a>
+
+          <ul class="dropdown-menu">
+            <li><sd-authn-session></sd-authn-session></li>
+          </ul>
+        </li>
+      </ul>
+
+
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+;T:metadata{	:dependencieso:Set:
+@hash}
+I"environment-version;TTI"environment-paths;TTI"rails-env;TTI"2processors:type=text/html&file_type=text/html;TTI"Lfile-digest://app/assets/javascripts/spa-demo/layout/navbar/navbar.html;TTF:charsetI"
+utf-8;F:digest"%÷}s˙@¶("Æ∫Q`“ÌHımUù}Ô@C˛˝k°ô	∏:lengthiÙ:dependencies_digest"%/>›÷?ûEèO&—¢ÄºØ3ı‚Vãà¯h%•6m
+¥Õ:idI"E6824c55a32564e6dc9555571f74e2b133b381b7247b80fbe2e7833a3d46332ec;F:
+mtimel+÷ŒQ]

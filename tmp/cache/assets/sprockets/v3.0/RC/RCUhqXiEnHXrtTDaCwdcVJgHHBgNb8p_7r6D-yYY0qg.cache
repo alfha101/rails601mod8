@@ -1,0 +1,79 @@
+{:uriI"ôfile://app/assets/javascripts/spa-demo/subjects/types/type_editor.html?type=text/html&id=c87cf8a570fc618b2e58f9eb973cd8f82a463346ab1d61995a4388dec4a6d633:ET:load_pathI"app/assets/javascripts;T:filenameI"Dapp/assets/javascripts/spa-demo/subjects/types/type_editor.html;T:	nameI"(spa-demo/subjects/types/type_editor;T:logical_pathI"-spa-demo/subjects/types/type_editor.html;T:content_typeI"text/html;T:sourceI"›
+<form class="type-form row" name="typeform">
+    <span class="type_id id">{{$ctrl.item.id}}</span>
+    <span class="invalid">{{$ctrl.item.errors.full_messages}}</span>
+  
+    <div class="type-label row col-lg-12">
+      <label class="col-xs-3">Label:</label>
+      <input class="col-xs-9"
+             name="type-label" 
+             ng-model="$ctrl.item.label" 
+             ng-readonly="!$ctrl.authz.canUpdate"
+             maxlength="80"
+             pattern=".{3,}" title="3 character minimum for Label"/>
+      <span class="invalid">{{$ctrl.item.errors.name}}</span>
+    </div>
+  
+    <div class="type-things row col-lg-12"
+         ng-show="$ctrl.item.id &&
+                  $ctrl.authz.canGetThings">
+      <label class="col-xs-3">Related Things:</label>
+      <ul class="type-things col-xs-9">
+        <li ng-repeat="ti in $ctrl.things">
+          <a data-ui-sref="things({id:ti.thing_id})">
+            <span class="id thing_id">{{ti.thing_id}}</span>
+            {{ti.thing_name}}</a>
+        </li>
+      </ul>
+      <span class="invalid">{{$ctrl.item.errors.thing_types}}</span>
+    </div>
+  
+    <div class="linkable-things row col-lg-12"
+         ng-show="$ctrl.linkable_things.length>0 &&
+                  $ctrl.authz.authenticated">
+      <label class="col-xs-3">Linkable Things:</label>
+      <div class="link-things" class="col-xs-9">
+        <select name="linkable-things" 
+                ng-model="$ctrl.selected_linkables"               
+                multiple>
+          <option ng-repeat="thing in $ctrl.linkable_things | orderBy:'name'"
+                  value="{{thing.id}}">{{thing.name}}</option>
+        </select>
+      </div>
+      <span class="invalid">{{$ctrl.item.errors.linkable_things}}</span>
+    </div>
+  
+    <div class="type-controls">
+      <span ng-show="$ctrl.authz.authenticated">
+        <button name="type-create"
+                ng-show="!$ctrl.item.id && $ctrl.authz.canCreate"
+                type="submit"
+                ng-disabled="typeform.$invalid"
+                ng-click="$ctrl.create()">Create Type</button>
+  
+        <span ng-show="$ctrl.item.id">
+          <button name="type-update"
+                  type="submit"
+                  ng-show="$ctrl.authz.canUpdate" 
+                  ng-disabled="!typeform.$dirty"
+                  ng-click="$ctrl.update()">Update Type</button>
+                  
+          <button name="type-delete"
+                  type="submit"
+                  ng-show="$ctrl.authz.canDelete" 
+                  ng-click="$ctrl.remove()">Delete Type</button>
+        </span>
+      </span>
+      <button name="type-clear"
+              type="submit"
+              ng-show="$ctrl.item.id || typeform.$dirty"
+              ng-click="$ctrl.clear()">Clear Type</button>
+    </div>
+  
+  </form>
+  ;T:metadata{	:dependencieso:Set:
+@hash}
+I"environment-version;TTI"environment-paths;TTI"rails-env;TTI"2processors:type=text/html&file_type=text/html;TTI"Rfile-digest://app/assets/javascripts/spa-demo/subjects/types/type_editor.html;TTF:charsetI"
+utf-8;F:digest"%2¨Î“§Œ°´oÆ ’{Ü)ê=[Çƒ¡s⁄ã5~Òån_:lengthi›
+:dependencies_digest"%∞¡lØ√á.%¶ım”Àa‹kYËÚ∑’wΩ’«QrŸØu—):idI"Ec87cf8a570fc618b2e58f9eb973cd8f82a463346ab1d61995a4388dec4a6d633;F:
+mtimel+’X]

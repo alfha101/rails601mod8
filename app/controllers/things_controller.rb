@@ -14,6 +14,7 @@ class ThingsController < ApplicationController
   end
 
   def show
+    # byebug
     authorize @thing
     things = ThingPolicy::Scope.new(current_user,
                                     Thing.where(:id=>@thing.id))

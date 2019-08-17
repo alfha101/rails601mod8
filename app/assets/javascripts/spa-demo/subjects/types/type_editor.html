@@ -1,0 +1,73 @@
+<form class="type-form row" name="typeform">
+    <span class="type_id id">{{$ctrl.item.id}}</span>
+    <span class="invalid">{{$ctrl.item.errors.full_messages}}</span>
+  
+    <div class="type-label row col-lg-12">
+      <label class="col-xs-3">Label:</label>
+      <input class="col-xs-9"
+             name="type-label" 
+             ng-model="$ctrl.item.label" 
+             ng-readonly="!$ctrl.authz.canUpdate"
+             maxlength="80"k
+             pattern=".{3,}" title="3 character minimum for Label"/>
+      <span class="invalid">{{$ctrl.item.errors.name}}</span>
+    </div>
+  
+    <div class="type-things row col-lg-12"
+         ng-show="$ctrl.item.id &&
+                  $ctrl.authz.canGetThings">
+      <label class="col-xs-3">Related Things:</label>
+      <ul class="type-things col-xs-9">
+        <li ng-repeat="ti in $ctrl.things">
+          <a data-ui-sref="things({id:ti.thing_id})">
+            <span class="id thing_id">{{ti.thing_id}}</span>
+            {{ti.thing_name}}</a>
+        </li>
+      </ul>
+      <span class="invalid">{{$ctrl.item.errors.thing_types}}</span>
+    </div>
+  
+    <div class="linkable-things row col-lg-12"
+         ng-show="$ctrl.linkable_things.length>0 &&
+                  $ctrl.authz.authenticated">
+      <label class="col-xs-3">Linkable Things:</label>
+      <div class="link-things" class="col-xs-9">
+        <select name="linkable-things" 
+                ng-model="$ctrl.selected_linkables"               
+                multiple>
+          <option ng-repeat="thing in $ctrl.linkable_things | orderBy:'name'"
+                  value="{{thing.id}}">{{thing.name}}</option>
+        </select>
+      </div>
+      <span class="invalid">{{$ctrl.item.errors.linkable_things}}</span>
+    </div>
+  
+    <div class="type-controls">
+      <span ng-show="$ctrl.authz.authenticated">
+        <button name="type-create"
+                ng-show="!$ctrl.item.id && $ctrl.authz.canCreate"
+                type="submit"
+                ng-disabled="typeform.$invalid"
+                ng-click="$ctrl.create()">Create Type</button>
+  
+        <span ng-show="$ctrl.item.id">
+          <button name="type-update"
+                  type="submit"
+                  ng-show="$ctrl.authz.canUpdate" 
+                  ng-disabled="!typeform.$dirty"
+                  ng-click="$ctrl.update()">Update Type</button>
+
+          <button name="type-delete"
+                  type="submit"
+                  ng-show="$ctrl.authz.canDelete" 
+                  ng-click="$ctrl.remove()">Delete Type</button>
+        </span>
+      </span>
+      <button name="type-clear"
+              type="submit"
+              ng-show="$ctrl.item.id || typeform.$dirty"
+              ng-click="$ctrl.clear()">Clear Type</button>
+    </div>
+  
+  </form>
+  
