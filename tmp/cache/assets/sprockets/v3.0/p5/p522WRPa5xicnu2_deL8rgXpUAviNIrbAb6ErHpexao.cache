@@ -1,59 +1,0 @@
-{:uriI" file://app/assets/javascripts/spa-demo/authn/authn_session/authn_session.html?type=text/html&id=0cda18e05b6434b110753298096f3d27669c7ad30834098cd9bfdf0bef21e22e:ET:load_pathI"app/assets/javascripts;T:filenameI"Kapp/assets/javascripts/spa-demo/authn/authn_session/authn_session.html;T:	nameI"/spa-demo/authn/authn_session/authn_session;T:logical_pathI"4spa-demo/authn/authn_session/authn_session.html;T:content_typeI"text/html;T:sourceI"<div ng-hide="$ctrl.getCurrentUser()">
-  <form id="login-form"
-        name="login_form"
-        ng-submit="$ctrl.login()">
-
-    <div class="form-group">
-      <div id="login-email">
-        <label>email</label>
-        <input type="email" 
-               name="login_email" 
-               ng-model="$ctrl.loginForm.email" 
-               required="required"/>
-      </div>
-
-      <div id="login-password">
-        <label>password</label>
-        <input type="password" 
-               name="login_password" 
-               ng-model="$ctrl.loginForm.password" 
-               required="required"/>
-      </div>
-    </div>
-
-    <div id="login-submit">
-      <span class="invalid"
-            ng-hide="login_form.$dirty">{{$ctrl.loginForm.errors.full_messages}}</span>
-
-      <button class="btn btn-default"
-              ng-disabled="login_form.$invalid"
-              name="login_submit"
-              type="submit" >Login</button>
-    </div>
-
-    <div id="new-account">
-      <label>New here?</label>
-      <a ui-sref="accountSignup" class="initialism">Sign Up</a>
-    </div>    
-  </form>
-</div>
-
-<div ng-show="$ctrl.getCurrentUser()">
-  <form id="logout-form" 
-        ng-submit="$ctrl.logout()">
-    <span id="user_id" 
-          class="id"
-          ng-if="$ctrl.getCurrentUser()">{{$ctrl.getCurrentUser().id}}</span>
-
-    <div id="logout-identity">
-      <label>{{$ctrl.getCurrentUserName()}}</label>
-      <button type="submit" 
-              name="logout_submit"
-              class="btn btn-default">Logout</button>
-    </div>
-  </form>
-</div>;T:metadata{	:dependencieso:Set:
-@hash}
-I"environment-version;TTI"environment-paths;TTI"rails-env;TTI"2processors:type=text/html&file_type=text/html;TTI"Yfile-digest://app/assets/javascripts/spa-demo/authn/authn_session/authn_session.html;TTF:charsetI"
-utf-8;F:digest"%þ¼<•jŠB©=ŒæÊ{ó»æv÷ÂˆÍ*Ú«Ùèô:lengthi:dependencies_digest"%ðM^”*Þñ‚§îm@=ðÄÍR“Ù8ðªÞ×¬‰:idI"E0cda18e05b6434b110753298096f3d27669c7ad30834098cd9bfdf0bef21e22e;F:
-mtimel+Ïw=]

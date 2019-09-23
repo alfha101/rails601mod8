@@ -1,61 +1,0 @@
-{:uriI"’file://app/assets/javascripts/spa-demo/authn/signup/signup.html?type=text/html&id=47f5bf0c6fc7afb202047dbfefd5465bc0299baaffdbec2201162180b06558b2:ET:load_pathI"app/assets/javascripts;T:filenameI"=app/assets/javascripts/spa-demo/authn/signup/signup.html;T:	nameI"!spa-demo/authn/signup/signup;T:logical_pathI"&spa-demo/authn/signup/signup.html;T:content_typeI"text/html;T:sourceI"ã<form id="signup-form" name="signup_form" ng-submit="$ctrl.signup()">
-  <span class="invalid"
-        ng-hide="signup_form.$dirty">{{$ctrl.signupForm.errors.full_messages}}</span>
-
-  <div id="signup-email" class="row col-lg-12">
-    <label class="col-xs-3">email</label>
-    <input class="col-xs-9"
-           type="email" 
-           name="signup-email" 
-           ng-model="$ctrl.signupForm.email" 
-           required="required"/>
-    <span class="invalid"
-          ng-hide="signup_form.$dirty">{{$ctrl.signupForm.errors.email}}</span>
-  </div>
-
-  <div id="signup-name" class="row col-lg-12">
-    <label class="col-xs-3">name</label>
-    <input class="col-xs-9"
-           name="signup-name" 
-           ng-model="$ctrl.signupForm.name" 
-           required="required"/>
-    <span class="invalid"
-          ng-hide="signup_form.$dirty">{{$ctrl.signupForm.errors.name}}</span>
-  </div>
-
-  <div id="signup-password" class="row col-lg-12">
-    <label class="col-xs-3 pull-left">password</label>
-    <input class="col-xs-9"
-           type="password" 
-           name="signup-password" 
-           ng-model="$ctrl.signupForm.password" 
-           required="required"/>
-    <span class="invalid"
-          ng-hide="signup_form.$dirty">{{$ctrl.signupForm.errors.password}}</span>
-  </div>
-
-  <div id="signup-password_confirmation" class="row col-lg-12">
-    <label class="col-xs-3 pull-left">password confirmation</label>
-    <input class="col-xs-9"
-           type="password" 
-           name="signup-password_confirmation" 
-           ng-model="$ctrl.signupForm.password_confirmation" 
-           required="required"/>
-    <span class="invalid"
-          ng-hide="signup_form.$dirty">{{$ctrl.signupForm.errors.password_confirmation}}</span>
-  </div>
-
-  <div id="signup-controls" class="row col-lg-12">
-    <button ng-hide="$ctrl.id"
-            ng-disabled="signup_form.$invalid"
-            class="col-xs-3 btn btn-default"
-            type="submit"
-            name="signup-submit">Sign Up</button>
-  </div>
-</form>
-;T:metadata{	:dependencieso:Set:
-@hash}
-I"environment-version;TTI"environment-paths;TTI"rails-env;TTI"2processors:type=text/html&file_type=text/html;TTI"Kfile-digest://app/assets/javascripts/spa-demo/authn/signup/signup.html;TTF:charsetI"
-utf-8;F:digest"%îØJ³(ú\‰«ÔÌŠ“´jÎÚŒ›—’…æ»`eÑwFå:lengthiã:dependencies_digest"%EËÔÇS[3œyn_¦K3×Õ]¿Æ
-}™=ÒôóïÔ:idI"E47f5bf0c6fc7afb202047dbfefd5465bc0299baaffdbec2201162180b06558b2;F:
-mtimel+ùw=]

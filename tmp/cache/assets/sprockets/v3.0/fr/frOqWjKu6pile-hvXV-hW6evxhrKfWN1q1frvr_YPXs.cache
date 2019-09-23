@@ -1,9 +1,0 @@
-{:uriI"‰file://app/assets/javascripts/spa-demo/pages/main.html?type=text/html&id=a35ad09b4ff77dbfb304694acfce1ae321e3a5ca2be672d89eb46b8b6e50d76f:ET:load_pathI"app/assets/javascripts;T:filenameI"4app/assets/javascripts/spa-demo/pages/main.html;T:	nameI"spa-demo/pages/main;T:logical_pathI"spa-demo/pages/main.html;T:content_typeI"text/html;T:sourceI"l<div>
-  <h2>Sample App</h2>
-  <span>(from spa-demo/pages/main.html)</span>
-  <sd-foos></sd-foos>
-</div>;T:metadata{	:dependencieso:Set:
-@hash}
-I"environment-version;TTI"environment-paths;TTI"rails-env;TTI"2processors:type=text/html&file_type=text/html;TTI"Bfile-digest://app/assets/javascripts/spa-demo/pages/main.html;TTF:charsetI"
-utf-8;F:digest"%OËZ¼Œ™ÓnŸÍ¤¦†3.7;§˜Jž¼O+‚aÆ[':lengthil:dependencies_digest"%wmï.òLgwÌB´£t-&N|òùôhŽÂ·s´o:idI"Ea35ad09b4ff77dbfb304694acfce1ae321e3a5ca2be672d89eb46b8b6e50d76f;F:
-mtimel+Ïw=]

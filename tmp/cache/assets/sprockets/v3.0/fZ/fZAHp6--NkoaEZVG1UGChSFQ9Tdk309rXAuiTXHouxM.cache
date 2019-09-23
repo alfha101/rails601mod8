@@ -1,72 +1,0 @@
-{:uriI"’file://app/assets/javascripts/spa-demo/pages/subjects_page.html?type=text/html&id=8c645fd37366075d139e298b7e70b6c7cdf2e8f3325c7fad07136337365d2f5e:ET:load_pathI"app/assets/javascripts;T:filenameI"=app/assets/javascripts/spa-demo/pages/subjects_page.html;T:	nameI"!spa-demo/pages/subjects_page;T:logical_pathI"&spa-demo/pages/subjects_page.html;T:content_typeI"text/html;T:sourceI"¾<div class="subjects-page col-xs-12">
-  <sd-areas sd-areas-side>
-    <div class="areas-left"
-         ng-hide="sideVM.isHidden('left')"
-         ng-class="sideVM.isHidden('right') ?'col-sm-12':'col-sm-6 col-md-5 col-lg-4'">
-      <sd-area label="Subjects"
-               position="left">
-
-        <sd-tabs>
-          <sd-tab label="Things">
-            <sd-current-things></sd-current-things>
-          </sd-tab>
-
-          <sd-tab label="Images">
-            <sd-current-images></sd-current-images>
-          </sd-tab>
-        </sd-tabs>
-
-      </sd-area>
-
-      <sd-area label="Details"
-               position="left">
-
-        <sd-tabs>
-          <sd-tab label="Thing">
-            <sd-current-thing-info></sd-current-thing-info>
-          </sd-tab>
-          <sd-tab label="Image">
-              <sd-current-image-viewer name="details-area"              
-                                       min-width="400">
-              </sd-current-image-viewer>
-          </sd-tab>
-
-        </sd-tabs>
-
-      </sd-area>
-    </div>
-    <div class="areas-right"
-         ng-hide="sideVM.isHidden('right')"
-         ng-class="sideVM.isHidden('left') ? 'col-sm-12':'col-sm-6 col-md-7 col-lg-8'">
-      <sd-area label="Map"
-               position="right">
-
-        <sd-tabs>
-          <sd-tab label="Map">
-            <sd-current-subjects-map></sd-current-subjects-map>
-          </sd-tab>
-          <sd-tab label="Things">
-            <sd-current-things></sd-current-things>
-          </sd-tab>
-          <sd-tab label="Images">
-            <sd-current-images></sd-current-images>
-          </sd-tab>
-          <sd-tab label="Thing">
-              <sd-current-thing-info></sd-current-thing-info>
-          </sd-tab>
-          <sd-tab label="Image">
-              <sd-current-image-viewer name="map-area"
-                                       min-width="800">
-              </sd-current-image-viewer>
-          </sd-tab>
-        </sd-tabs>
-
-      </sd-area>
-    </div> 
-  </sd-areas>
-</div>
-;T:metadata{	:dependencieso:Set:
-@hash}
-I"environment-version;TTI"environment-paths;TTI"rails-env;TTI"2processors:type=text/html&file_type=text/html;TTI"Kfile-digest://app/assets/javascripts/spa-demo/pages/subjects_page.html;TTF:charsetI"
-utf-8;F:digest"%Ð|0ºDñK_<µƒpòí­>ô{/œHü7íÅ¹j:lengthi¾:dependencies_digest"%ÈÚw°8aºþmÁ ØißLº%¶þ©“jÀ7tqB ß:idI"E8c645fd37366075d139e298b7e70b6c7cdf2e8f3325c7fad07136337365d2f5e;F:
-mtimel+Ïw=]

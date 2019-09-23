@@ -1,21 +1,0 @@
-{:uriI"file://app/assets/javascripts/spa-demo/pages/authn_page.html?type=text/html&id=74646599e33c95f767bdb40d35f2ede506f086e80d41fcad6dea479e241aa538:ET:load_pathI"app/assets/javascripts;T:filenameI":app/assets/javascripts/spa-demo/pages/authn_page.html;T:	nameI"spa-demo/pages/authn_page;T:logical_pathI"#spa-demo/pages/authn_page.html;T:content_typeI"text/html;T:sourceI"ó<div id="authn-check" sd-authn-check>
-  <h3>Identity Check</h3>
-
-  <div class="client-user">
-    <button ng-click="idVM.getClientUser()">$auth says...</button>
-    <label>{{idVM.client}}</label>
-  </div>
-  <div class="whoami-user">
-    <button ng-click="idVM.whoAmI()">whoAmI() says...</button>
-    <label>{{idVM.server.whoAmI}}</label>
-  </div>
-  <div class="checkme-user">
-    <button ng-click="idVM.checkMe()">checkMe() says...</button>
-    <label>{{idVM.server.checkMe}}</label>
-  </div>
-
-</div>;T:metadata{	:dependencieso:Set:
-@hash}
-I"environment-version;TTI"environment-paths;TTI"rails-env;TTI"2processors:type=text/html&file_type=text/html;TTI"Hfile-digest://app/assets/javascripts/spa-demo/pages/authn_page.html;TTF:charsetI"
-utf-8;F:digest"%(‰”ëş¶ƒ)Òúò[h£¯‹GöS½÷¹M'ğşË9i€:lengthió:dependencies_digest"%Í2$ÿ¶á—âUTÄ$dÅ{—ğcÂWülìE‚@ßk}7:idI"E74646599e33c95f767bdb40d35f2ede506f086e80d41fcad6dea479e241aa538;F:
-mtimel+Ïw=]

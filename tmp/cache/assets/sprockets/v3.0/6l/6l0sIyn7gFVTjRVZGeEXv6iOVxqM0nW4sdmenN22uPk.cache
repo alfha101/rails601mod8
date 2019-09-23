@@ -1,19 +1,0 @@
-{:uriI"¥file://app/assets/javascripts/spa-demo/subjects/current_images/current_images.html?type=text/html&id=c6c753857ebb485606786dae42677c80fdd34062ae57796749a155b5e0ecd7c0:ET:load_pathI"app/assets/javascripts;T:filenameI"Papp/assets/javascripts/spa-demo/subjects/current_images/current_images.html;T:	nameI"4spa-demo/subjects/current_images/current_images;T:logical_pathI"9spa-demo/subjects/current_images/current_images.html;T:content_typeI"text/html;T:sourceI"g<ul class="items images">
-  <li ng-repeat="ti in $ctrl.images"
-      ng-class="{selected: $ctrl.isCurrentImage($index)}">
-    <a ng-click="$ctrl.imageClicked($index)">
-      <img ng-src="{{ti.image_content_url}}?width=100"/>      
-      <span class="id image_id">{{ti.image_id}}</span>
-      <span class="caption">{{ti.image_caption}}</span>
-      <span class="id thing_id" ng-if="ti.thing_id">{{ti.thing_id}}</span>
-      <span class="thing_name" ng-if="ti.thing_id">({{ti.thing_name}})</span>
-      <span class="distance" ng-if="ti.distance!=null">({{ti.distance | number:1}} miles)</span>
-    </a>
-  </li>
-</ul>
-;T:metadata{	:dependencieso:Set:
-@hash}
-I"environment-version;TTI"environment-paths;TTI"rails-env;TTI"2processors:type=text/html&file_type=text/html;TTI"^file-digest://app/assets/javascripts/spa-demo/subjects/current_images/current_images.html;TTF:charsetI"
-utf-8;F:digest"%Ãu;«*#­¡'ÉS”äĞSêÙ
-1ÿ+Á0³áhêù:lengthig:dependencies_digest"%šTî'äÂÔBâêñ÷åMtŒf6’usè!+£àSŒì:idI"Ec6c753857ebb485606786dae42677c80fdd34062ae57796749a155b5e0ecd7c0;F:
-mtimel+Ïw=]

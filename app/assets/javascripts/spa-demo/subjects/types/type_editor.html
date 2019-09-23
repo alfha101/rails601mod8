@@ -20,8 +20,10 @@
       <ul class="type-things col-xs-9">
         <li ng-repeat="ti in $ctrl.things">
           <a data-ui-sref="things({id:ti.thing_id})">
-            <span class="id thing_id">{{ti.thing_id}}</span>
-            {{ti.thing_name}}</a>
+     <!-- FIXME: -->
+     <span class="id thing_id">{{ti.thing_id}}</span>
+            {{ti.thing_name}}  "  view map" </a>
+      <!--  -->
         </li>
       </ul>
       <span class="invalid">{{$ctrl.item.errors.thing_types}}</span>

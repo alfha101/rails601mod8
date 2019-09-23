@@ -1,49 +1,0 @@
-{:uriI"¨file://app/assets/javascripts/spa-demo/geoloc/current_origin/current_origin_selector.html?type=text/html&id=aace7814877608af0b81ccdb6198a1f827e4e00aa69be224582b43433f35d592:ET:load_pathI"app/assets/javascripts;T:filenameI"Wapp/assets/javascripts/spa-demo/geoloc/current_origin/current_origin_selector.html;T:	nameI";spa-demo/geoloc/current_origin/current_origin_selector;T:logical_pathI"@spa-demo/geoloc/current_origin/current_origin_selector.html;T:content_typeI"text/html;T:sourceI"˙<form name="select_origin"
-      class="navbar-form"      
-      ng-hide="$ctrl.getOriginAddress()">
-      <input name="address-search"
-             type="text" 
-             placeholder="Address Search"
-             ng-model="$ctrl.address"
-             ng-required="true">
-      <button title="lookup-address"
-              class="btn btn-default"
-              ng-disabled="select_origin.$invalid"
-              ng-click="$ctrl.lookupAddress()">Lookup</button>
-      <label title="my-position"
-              class="btn btn-default"
-              ng-class="{'invalid' : $ctrl.myPositionError!=null }"
-              ng-show="$ctrl.isCurrentLocationSupported()"
-              ng-click="$ctrl.useCurrentLocation()">
-              {{ $ctrl.myPositionError==null ? 'My Position' : 'Position Unavail'}}                
-              </label>
-</form>
-
-<span class="search-criteria"
-    ng-show="$ctrl.getOriginAddress()">
-  <form name="show_origin"
-        class="navbar-form">
-    <label>Origin: </label>
-    <span class="current-origin">{{$ctrl.getOriginAddress()}}</span>
-    <button title="change-origin"
-            type="submit" 
-            class="btn btn-default"
-            ng-click="$ctrl.clearOrigin()">Change</button>
-  </form>
-  <form name="distance_limit"
-        class="navbar-form">
-    <label>Miles:</label>
-    <input type="number"
-         name="distance-limit"
-         min="0"
-         step="1"
-         ng-model="$ctrl.distanceLimit"
-         ng-change="$ctrl.changeDistance()">
-  </form>          
-  
-</span>  
-;T:metadata{	:dependencieso:Set:
-@hash}
-I"environment-version;TTI"environment-paths;TTI"rails-env;TTI"2processors:type=text/html&file_type=text/html;TTI"efile-digest://app/assets/javascripts/spa-demo/geoloc/current_origin/current_origin_selector.html;TTF:charsetI"
-utf-8;F:digest"%NV 7R -QEê˝ô3;å<a¸Å‰NQ9vP∆{¢Ê:lengthi˙:dependencies_digest"%Jb{⁄"®1Mw¯:RmIÃ”U¸\›1ÁcÈããõ:idI"Eaace7814877608af0b81ccdb6198a1f827e4e00aa69be224582b43433f35d592;F:
-mtimel+œw=]

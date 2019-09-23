@@ -95,7 +95,10 @@
         //console.log("re/loading type", itemId);
         vm.item = Type.get({id:itemId});
         if (TypesAuthz.canGetThings()) {
+            // vm.things = TypeThing.query({type_id: itemId});
+            // FIXME:  
             vm.things = TypeThing.query({type_id: itemId});
+
         }
         vm.linkable_things = TypeLinkableThing.query({type_id: itemId});
         vm.typesAuthz.newItem(vm.item);
