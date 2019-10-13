@@ -52,7 +52,7 @@
     vm.areasRight = [];
 
     vm.$onInit = function() {
-      //console.log("AreasController",$scope);
+      console.log("AreasController",$scope);
     }
     return;
     //////////////

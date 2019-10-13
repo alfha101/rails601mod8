@@ -35,6 +35,10 @@
       url: "/types/:id",
       templateUrl: APP_CONFIG.types_page_html
     })
+    .state("typeThing",{
+      url: "/types/map/:id",
+      templateUrl: APP_CONFIG.type_thing_map_html
+    })
     .state("foos",{
       url: "/foos",
       templateUrl: APP_CONFIG.main_page_html

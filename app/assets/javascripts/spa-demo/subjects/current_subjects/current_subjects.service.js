@@ -20,9 +20,12 @@
     service.imageIdx = null;
     service.things = [];
     service.thingIdx = null;
+    service.types = [];
+    service.typeIdx = null;
     service.refresh = refresh;
     service.isCurrentImageIndex = isCurrentImageIndex;
     service.isCurrentThingIndex = isCurrentThingIndex;
+    service.isCurrentTypeIndex = isCurrentTypeIndex;
     service.nextThing = nextThing;
     service.previousThing = previousThing;
 
@@ -81,12 +84,16 @@
     }
 
     function isCurrentImageIndex(index) {
-      //console.log("isCurrentImageIndex", index, service.imageIdx === index);
+      // console.log("isCurrentImageIndex", index, service.imageIdx === index);
       return service.imageIdx === index;
     }
     function isCurrentThingIndex(index) {
-      //console.log("isCurrentThingIndex", index, service.thingIdx === index);
+      // console.log("isCurrentThingIndex", index, service.thingIdx === index);
       return service.thingIdx === index;
+    }
+    function isCurrentTypeIndex(index) {
+      // console.log("isCurrentTypeIndex", index, service.typeIdx === index);
+      return service.typeIdx === index;
     }
     function nextThing() {
       if (service.thingIdx !== null) {
@@ -113,6 +120,9 @@
   CurrentSubjects.prototype.getThings = function() {
     return this.things;
   }
+  CurrentSubjects.prototype.getTypes = function() {
+    return this.types;
+  }
   CurrentSubjects.prototype.getCurrentImageIndex = function() {
      return this.imageIdx;
   }
@@ -122,6 +132,9 @@
   CurrentSubjects.prototype.getCurrentThing = function() {
     return this.things.length > 0 ? this.things[this.thingIdx] : null;
   }
+  CurrentSubjects.prototype.getCurrentType = function() {
+    return this.types.length > 0 ? this.types[this.typeIdx] : null;
+  }
   CurrentSubjects.prototype.getCurrentImageId = function() {
     var currentImage = this.getCurrentImage();
     return currentImage ? currentImage.image_id : null;
@@ -129,6 +142,10 @@
   CurrentSubjects.prototype.getCurrentThingId = function() {
     var currentThing = this.getCurrentThing();
     return currentThing ? currentThing.thing_id : null;
+  }
+  CurrentSubjects.prototype.getCurrentTypeId = function() {
+    var currentType = this.getCurrentType();
+    return currentType ? currentType.type_id : null;
   }
 
 

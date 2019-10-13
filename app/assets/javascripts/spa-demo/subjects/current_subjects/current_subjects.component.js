@@ -10,7 +10,7 @@
         zoom: "@"
       }
     });
-
+  
   CurrentSubjectsMapController.$inject = ["$scope", "$q", "$element",
                                           "spa-demo.geoloc.currentOrigin",
                                           "spa-demo.geoloc.myLocation",
@@ -26,6 +26,7 @@
       console.log("CurrentSubjectsMapController",$scope);
     }
     vm.$postLink = function() {
+      console.log(("postLink", $element));
       var element = $element.find('div')[0];
       getLocation().then(
         function(location){

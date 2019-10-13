@@ -52,7 +52,7 @@
     }
   
   
-    TypeEditorController.$inject = ["$scope","$q",
+    TypeEditorController.$inject = ["$rootScope", "$scope","$q",
                                      "$state", "$stateParams",
                                      "spa-demo.authz.Authz",
                                      "spa-demo.subjects.TypesAuthz",
@@ -60,7 +60,7 @@
                                      "spa-demo.subjects.TypeThing",
                                      "spa-demo.subjects.TypeLinkableThing",
                                      ];
-    function TypeEditorController($scope, $q, $state, $stateParams, 
+    function TypeEditorController($rootScope, $scope, $q, $state, $stateParams, 
                                    Authz, TypesAuthz, Type, TypeThing,TypeLinkableThing) {
       var vm=this;
       vm.selected_linkables=[];
@@ -92,12 +92,16 @@
   
       function reload(typeId) {
         var itemId = typeId ? typeId : vm.item.id;
-        //console.log("re/loading type", itemId);
+
         vm.item = Type.get({id:itemId});
         if (TypesAuthz.canGetThings()) {
-            // vm.things = TypeThing.query({type_id: itemId});
-            // FIXME:  
             vm.things = TypeThing.query({type_id: itemId});
+            console.log("reload", vm.things);
+            
+            $rootScope.current_type_things = vm.things;
+            $rootScope.$watch('current_type_things', function() {
+             // alert('hey, current_type_things has changed!');
+            });
 
         }
         vm.linkable_things = TypeLinkableThing.query({type_id: itemId});

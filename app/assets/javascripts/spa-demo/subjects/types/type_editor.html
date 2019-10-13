@@ -18,12 +18,10 @@
                   $ctrl.authz.canGetThings">
       <label class="col-xs-3">Related Things:</label>
       <ul class="type-things col-xs-9">
-        <li ng-repeat="ti in $ctrl.things">
-          <a data-ui-sref="things({id:ti.thing_id})">
+        <li ng-repeat="ti in $ctrl.things" ui-sref-active="active">
      <!-- FIXME: -->
-     <span class="id thing_id">{{ti.thing_id}}</span>
-            {{ti.thing_name}}  "  view map" </a>
-      <!--  -->
+     <!-- <a ui-sref="home" data-ui-sref="things({id:ti.thing_id})">{{ti.thing_name}} </a> -->
+          <a ui-sref="typeThing" data-ui-sref="things({id:ti.thing_id})">{{ti.thing_name}} </a>
         </li>
       </ul>
       <span class="invalid">{{$ctrl.item.errors.thing_types}}</span>
@@ -70,6 +68,8 @@
               ng-show="$ctrl.item.id || typeform.$dirty"
               ng-click="$ctrl.clear()">Clear Type</button>
     </div>
-  
+  <!-- <script>
+    console.log($ctrl.things);
+  </script>   -->
   </form>
   
