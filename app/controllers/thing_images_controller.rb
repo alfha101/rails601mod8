@@ -12,6 +12,9 @@ class ThingImagesController < ApplicationController
 
   def index
     authorize @thing, :get_images?
+    puts " "
+    puts "Hello World"
+    puts "  "
     @thing_images = @thing.thing_images.prioritized.with_caption
   end
 
@@ -49,6 +52,7 @@ class ThingImagesController < ApplicationController
         .with_caption
         .with_position
       @thing_images=@thing_images.things    if subject && subject.downcase=="thing"
+      @thing_images=ThinkImage.with_type    if subject && subject.downcase=="thing_id" #images for 1 specified thing
       @thing_images=ThingImage.with_distance(@origin, @thing_images) if distance.downcase=="true"
       render "thing_images/index"
     end

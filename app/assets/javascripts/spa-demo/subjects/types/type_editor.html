@@ -19,9 +19,8 @@
       <label class="col-xs-3">Related Things:</label>
       <ul class="type-things col-xs-9">
         <li ng-repeat="ti in $ctrl.things" ui-sref-active="active">
-     <!-- FIXME: -->
-     <!-- <a ui-sref="home" data-ui-sref="things({id:ti.thing_id})">{{ti.thing_name}} </a> -->
-          <a ui-sref="typeThing" data-ui-sref="things({id:ti.thing_id})">{{ti.thing_name}} </a>
+          <a ui-sref="typeThing" data-ui-sref="things({id:ti.thing_id})"
+              ng-click="$ctrl.thingClicked($index)"> {{ti.thing_name}} </a>
         </li>
       </ul>
       <span class="invalid">{{$ctrl.item.errors.thing_types}}</span>

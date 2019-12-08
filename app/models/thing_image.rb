@@ -17,6 +17,12 @@ class ThingImage < ActiveRecord::Base
   scope :with_name,    ->{ with_thing.select("things.name as thing_name")}
   scope :with_caption, ->{ with_image.select("images.caption as image_caption")}
   scope :with_position,->{ with_image.select("images.lng, images.lat")}
+  scope :with_type, ->(thingId) {joins(:image,:thing).where(thing_id: thingId)
+                                  .select("images.*","images.id as image_id")}
+
+  # FIXME: nuevo query scope a probar:
+  # scope :with_type2, ->(thing_id) {joins("INNER JOIN thing_images ON thing_images.image_id = images.id INNER JOIN things ON thing_images.thing_id = ?", thing_id)}
+
   scope :within_range, ->(origin, limit=nil, reverse=nil) {
     scope=with_position
     scope=scope.within(limit,:origin=>origin)                   if limit

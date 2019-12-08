@@ -41,6 +41,8 @@
     return;
     //////////////
     function thingClicked(index) {
+      console.log("thingClick es:", index);
+
       currentSubjects.setCurrentThing(index);
     }    
   }

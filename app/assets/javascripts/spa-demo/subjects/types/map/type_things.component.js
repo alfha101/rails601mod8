@@ -4,7 +4,7 @@
     angular
       .module("spa-demo.subjects")
       .component("sdTypeThings", {
-        templateUrl: thingsTemplateUrl,
+        templateUrl: typesTemplateUrl,
         controller: TypeThingsController,
       })
       .component("sdTypeThingInfo", {
@@ -13,9 +13,9 @@
       })
       ;
   
-    thingsTemplateUrl.$inject = ["spa-demo.config.APP_CONFIG"];
-    function thingsTemplateUrl(APP_CONFIG) {
-      return APP_CONFIG.current_things_html;
+    typesTemplateUrl.$inject = ["spa-demo.config.APP_CONFIG"];
+    function typesTemplateUrl(APP_CONFIG) {
+      return APP_CONFIG.type_editor_html;
     }    
     thingInfoTemplateUrl.$inject = ["spa-demo.config.APP_CONFIG"];
     function thingInfoTemplateUrl(APP_CONFIG) {
@@ -30,19 +30,25 @@
       vm.isCurrentThing = typeThing.isCurrentThingIndex;
       
       vm.$onInit = function() {
-        console.log("CurrentThingsController",$scope);
+        console.log("TypeThingsController",$scope);
       }
       vm.$postLink = function() {
         $scope.$watch(
           function() { return typeThing.getThings(); }, 
           // function(things) { vm.things = things; }
-          function() { vm.things = $rootScope.current_type_things; }
+          function() { 
+            vm.things = $rootScope.current_type_things;
+            console.log("$rootScope.current_type vm.things are:", vm.things);          
+            vm.images = $rootScope.current_type_images;
+            console.log("$rootScope.current_type vm.images are:", vm.images);          
+          }
         );
       }    
       return;
       //////////////
       function thingClicked(index) {
-        typeThing.setCurrentThing(index);
+        console.log("thingClicked es:", index);
+        // typeThing.setCurrentThing(index);
       }    
     }
   

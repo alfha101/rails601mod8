@@ -48,7 +48,7 @@
     vm.updateImageLinks = updateImageLinks;
 
     vm.$onInit = function() {
-      //console.log("ThingEditorController",$scope);
+      console.log("ThingEditorController",$scope);
       $scope.$watch(function(){ return Authz.getAuthorizedUserId(); }, 
                     function(){ 
                       if ($stateParams.id) {
@@ -69,8 +69,9 @@
 
     function reload(thingId) {
       var itemId = thingId ? thingId : vm.item.id;      
-      //console.log("re/loading thing", itemId);
+      console.log("re/loading thing", itemId);
       vm.images = ThingImage.query({thing_id:itemId});
+      console.log("reload", vm.images);
       vm.item = Thing.get({id:itemId});
       vm.thingsAuthz.newItem(vm.item);
       vm.images.$promise.then(
@@ -164,7 +165,7 @@
     var vm=this;
 
     vm.$onInit = function() {
-      //console.log("ThingSelectorController",$scope);
+      console.log("ThingSelectorController",$scope);
       $scope.$watch(function(){ return Authz.getAuthorizedUserId(); }, 
                     function(){ 
                       if (!$stateParams.id) {

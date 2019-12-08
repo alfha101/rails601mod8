@@ -15,12 +15,10 @@
                                             "spa-demo.geoloc.currentOrigin",
                                             "spa-demo.geoloc.myLocation",
                                             "spa-demo.geoloc.Map",
-                                            // "spa-demo.subjects.currentSubjects",
                                             "spa-demo.subjects.typeThing",
                                             "spa-demo.config.APP_CONFIG"];
     function TypeThingMapController($rootScope, $scope, $q, $element, 
                                           currentOrigin, myLocation, Map,
-                                          // currentSubjects,
                                           typeThing, 
                                           APP_CONFIG) {
       var vm=this;
@@ -37,26 +35,45 @@
             initializeMap(element, location.position);
           });
   
-          // $rootScope.$watch(
-          //   function() { 
-          //       return $rootScope.current_type_things; 
-          //   },
-          //   function(){
-          //       console.log("changed", $rootScope.current_type_things);
-          //   },true);
+          $rootScope.$watch(
+            function() { 
+                return $rootScope.current_type_things; 
+            },
+            function(){
+                console.log("changed", $rootScope.current_type_things);
+            },true);
 
 
           $rootScope.$watch('current_type_things', function() {
             // alert('hey, current_type_things has changed!');
-            vm.things = $rootScope.current_type_things;
-            console.log("$rootScope.current_type_things =", $rootScope.current_type_things);
+            if ($rootScope.current_type_things == null) {
+              // do nothing
+            }
+            else {
+                vm.things = $rootScope.current_type_things[$rootScope.thingClicked].thing_id;
+            }
+           });
+
+           $rootScope.$watch('current_type_images', function() {
+            // alert('hey, current_type_images has changed!');
+            vm.images = $rootScope.current_type_images;
            });
 
 
         $scope.$watch(
           function(){ return typeThing.getImages(); }, 
           function(images) { 
-            vm.images = images; 
+            var cur_thing_id = $rootScope.current_type_things[$rootScope.thingClicked].thing_id;
+            var res = images;
+            var j = 0;
+            var tmp, res2 = [];
+            for (var i=0; i<res.length; i++) {
+              tmp=res[i];
+              if (tmp.thing_id === cur_thing_id) {
+                res2[j] = tmp; j++
+              }
+            }
+            vm.images = res2; 
             displaySubjects(); 
           }); 
         $scope.$watch(

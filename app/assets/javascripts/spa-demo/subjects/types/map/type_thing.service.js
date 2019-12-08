@@ -8,9 +8,10 @@
     TypeThing.$inject = ["$rootScope","$q",
                                "$resource",
                                "spa-demo.geoloc.currentOrigin",
-                               "spa-demo.config.APP_CONFIG"];
+                               "spa-demo.config.APP_CONFIG",
+                               "spa-demo.subjects.ThingImage"];
   
-    function TypeThing($rootScope, $q, $resource, currentOrigin, APP_CONFIG) {
+    function TypeThing($rootScope, $q, $resource, currentOrigin, APP_CONFIG, ThingImage) {
       var subjectsResource = $resource(APP_CONFIG.server_url + "/api/subjects",{},{
         query: { cache:false, isArray:true }
       });
@@ -28,6 +29,7 @@
       service.isCurrentTypeIndex = isCurrentTypeIndex;
       service.nextThing = nextThing;
       service.previousThing = previousThing;
+      var contador = 0;
   
       //refresh();
       $rootScope.$watch(function(){ return currentOrigin.getVersion(); }, refresh);
@@ -35,6 +37,7 @@
       ////////////////
       function refresh() {      
         var params=currentOrigin.getPosition();
+        contador +=1;
         if (!params || !params.lng || !params.lat) {
           params=angular.copy(APP_CONFIG.default_position);
         } else {
@@ -45,25 +48,32 @@
           params["miles"]=currentOrigin.getDistance();
         }
         params["order"]="ASC";
-        console.log("refresh",params);
+        console.log("refresh",params, "contador", contador);
   
         var p1=refreshImages(params);
-        params["subject"]="thing";      
-        console.log("Ahora current_type_things es:", service.things);
+        var thing_id_clicked = $rootScope.current_type_things[$rootScope.thingClicked].thing_id;
+
+        params["subject"]="thing"; 
+
+        params["thing_id"] =  thing_id_clicked;    
         var p2=refreshThings(params);
         $q.all([p1,p2]).then(
-          console.log("Ahora p2 es:", p2),
           function(){
             service.setCurrentImageForCurrentThing();
-          });      
+          });     
       }
   
       function refreshImages(params) {
         var result=subjectsResource.query(params);
+        console.log("result es:", result);
+        console.log("result params are: ", params);
+        
+  
         result.$promise.then(
           function(images){
             service.images=images;
             service.version += 1;
+            console.log("service.version es:", service.version);
             if (!service.imageIdx || service.imageIdx > images.length) {
               service.imageIdx=0;
             }
@@ -71,11 +81,13 @@
           });
         return result.$promise;
       }
+
+
       function refreshThings(params) {
         var result=subjectsResource.query(params);
         result.$promise.then(
           function(things){
-            things = $rootScope.current_type_things;
+            things = $rootScope.current_type_things[$rootScope.thingClicked].thing_id;
             service.things=things;
 
             console.log("refreshThings",things);
@@ -254,7 +266,6 @@
       }    
     }
     TypeThing.prototype.setCurrentSubjectId = function(thing_id, image_id) {
-      console.log("setCurrentSubject", thing_id, image_id);
       this.setCurrentThingId(thing_id, true);
       this.setCurrentImageId(image_id, true);
     }

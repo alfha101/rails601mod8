@@ -63,6 +63,7 @@
     function TypeEditorController($rootScope, $scope, $q, $state, $stateParams, 
                                    Authz, TypesAuthz, Type, TypeThing,TypeLinkableThing) {
       var vm=this;
+      vm.thingClicked = thingClicked;
       vm.selected_linkables=[];
       vm.create = create;
       vm.clear  = clear;
@@ -83,6 +84,14 @@
       }
       return;
       //////////////
+      function thingClicked(index) {
+        vm.thingClicked = index;
+        $rootScope.thingClicked = index;
+        return vm.thingClicked;
+      }    
+
+
+
       function newResource() {
         //console.log("newResource()");
         vm.item = new Type();
@@ -96,11 +105,16 @@
         vm.item = Type.get({id:itemId});
         if (TypesAuthz.canGetThings()) {
             vm.things = TypeThing.query({type_id: itemId});
-            console.log("reload", vm.things);
+            vm.things.$promise.then (function()
+            {
+              $rootScope.current_type_things = vm.things;
+            });
             
-            $rootScope.current_type_things = vm.things;
+            
             $rootScope.$watch('current_type_things', function() {
-             // alert('hey, current_type_things has changed!');
+            });
+            $rootScope.$watch('thingClicked', function() {
+              console.log("hey, thingClicked has changed!", $rootScope.thingClicked);
             });
 
         }

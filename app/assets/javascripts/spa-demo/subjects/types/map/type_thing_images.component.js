@@ -3,13 +3,13 @@
   
     angular
       .module("spa-demo.subjects")
-      .component("sdCurrentImages", {
+      .component("sdTypeImages", {
         templateUrl: imagesTemplateUrl,
-        controller: CurrentImagesController,
+        controller: TypeImagesController,
       })
-      .component("sdCurrentImageViewer", {
+      .component("sdTypeImageViewer", {
         templateUrl: imageViewerTemplateUrl,
-        controller: CurrentImageViewerController,
+        controller: TypeImageViewerController,
         bindings: {
           name: "@",
           minWidth: "@"
@@ -26,15 +26,15 @@
       return APP_CONFIG.current_image_viewer_html;
     }    
   
-    CurrentImagesController.$inject = ["$scope",
+    TypeImagesController.$inject = ["$scope",
                                        "spa-demo.subjects.typeThing"];
-    function CurrentImagesController($scope, typeThing) {
+    function TypeImagesController($scope, typeThing) {
       var vm=this;
       vm.imageClicked = imageClicked;
-      vm.isCurrentImage = typeThing.isCurrentImageIndex;
+      vm.isTypeImage = typeThing.isTypeImageIndex;
   
       vm.$onInit = function() {
-        console.log("CurrentImagesController",$scope);
+        console.log("TypeImagesController",$scope);
       }
       vm.$postLink = function() {
         $scope.$watch(
@@ -45,18 +45,18 @@
       return;
       //////////////
       function imageClicked(index) {
-        typeThing.setCurrentImage(index);
+        typeThing.setTypeImage(index);
       }
     }
   
-    CurrentImageViewerController.$inject = ["$scope",
+    TypeImageViewerController.$inject = ["$scope",
                                             "spa-demo.subjects.typeThing"];
-    function CurrentImageViewerController($scope, typeThing) {
+    function TypeImageViewerController($scope, typeThing) {
       var vm=this;
       vm.viewerIndexChanged = viewerIndexChanged;
   
       vm.$onInit = function() {
-        console.log("CurrentImageViewerController",$scope);
+        console.log("TypeImageViewerController",$scope);
       }
       vm.$postLink = function() {
         $scope.$watch(
@@ -64,7 +64,7 @@
           function(images) { vm.images = images; }
         );
         $scope.$watch(
-          function() { return typeThing.getCurrentImageIndex(); }, 
+          function() { return typeThing.getTypeImageIndex(); }, 
           function(index) { vm.currentImageIndex = index; }
         );
       }    
@@ -72,7 +72,7 @@
       //////////////
       function viewerIndexChanged(index) {
         console.log("viewer index changed, setting currentImage", index);
-        typeThing.setCurrentImage(index);
+        typeThing.setTypeImage(index);
       }
     }
   
